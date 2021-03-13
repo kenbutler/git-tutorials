@@ -1,33 +1,14 @@
- /* Split the screen in half */
-.split {
-  height: 75%;
-  width: 50%;
-  position: fixed;
-  overflow-x: hidden;
+.common-text-justified {
+    font-size: 24px;
+    text-align: justify;
 }
 
-/* Control the left side */
-.left {
-  left: 0;
-  background-color: #111;
+.common-text-center {
+    font-size: 24px;
+    text-align: center;
 }
 
-/* Control the right side */
-.right {
-  right: 0;
-  top: 0;
-  background-color: red;
-}
-
-/* If you want the content centered horizontally and vertically */
-.centered {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-/* Style the image inside the centered container, if needed */
-.centered img {
-  width: 150px;
+.common-text-left {
+    font-size: 24px;
+    text-align: left;
 }
