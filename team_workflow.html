@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="dist/theme/black.css" id="theme">
     <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
     <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
 
     <!-- Icon -->
     <link rel="icon" href="img/icon/git.ico">
@@ -24,11 +25,11 @@
 <body>
 <!-- Navigation -->
 <div id="nav" class="ddsmoothmenu">
-    <div id="smoothmenu1" class="ddsmoothmenu">
+    <div id="smoothmenu1" class="ddsmoothmenu" style="background: white;">
         <ul>
             <li><a href="index.html">About</a></li>
             <li><a href="background.html">Background</a></li>
-            <li><a href="team_workflow.html" style="color:white; background-color:#1A1A1A">Team Workflow</a></li>
+            <li><a href="team_workflow.html" style="color:black; background-color:white">Team Workflow</a></li>
             <li><a href="">Installation</a>
                 <ul>
                     <li><a href="installation-cli.html">CLI</a></li>
@@ -55,8 +56,183 @@
 <!-- Content -->
 <div id="content" class="reveal">
     <div class="slides">
-        <section>Team Workflow Slide 1</section>
-        <section>Team Workflow Slide 2</section>
+        <section data-background="white">
+            <p>
+                Git can be very useful for team-based development.
+                <br>
+                Let's see how this works through a scenario!
+            </p>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p>
+                First, let's understand the characters at play.
+            </p>
+            <img src="img/character/Obi-Wan-Kenobi.png" width=30% alt="Team Lead">
+            <br>
+            <h3>Team Lead</h3>
+            <p>
+                Teams are typically led by a team lead. Here's ours!
+            </p>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <div style="width: 100%; height: 100%;">
+                <p class="common-text-centered">
+                    Teams also have developers.
+                </p>
+                <div style="float: left; width: 33%; height: inherit;">
+                    <img src="img/character/C3PO.png" width="50%" alt="Developer 1"><br>
+                    Developer 1
+                </div>
+                <div style="float: left; width: 33%; height: inherit; padding: 70px 0;">
+                    <img src="img/character/Obi-Wan-Kenobi.png" width=75% alt="Team Lead"><br>
+                    Team Lead
+                </div>
+                <div style="float: left; width: 33%; height: inherit;">
+                    <img src="img/character/R2D2.png" width="50%" alt="Developer 2"><br>
+                    Developer 2
+                </div>
+            </div>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                Developers all work on their own computers...
+            </p>
+            <img src="img/team-workflow/distr-dev-p1.png" width="60%">
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                ...and typically, this development is occurs in parallel, with each developer working independently.
+            </p>
+            <img src="img/team-workflow/distr-dev-p2.png" width="60%">
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                They will need an effective means for synchronizing their updates though.<br>
+                This is where Git comes in!
+            </p>
+            <img src="img/team-workflow/distr-dev-p3.png" width="60%">
+        </section>
+        <section data-background="white" data-transition="fade-in">
+            <p class="common-text-center">
+                <b>First, the team lead creates a repository on their organization's server.</b><br>
+                (This is denoted by the yellow circle here)
+            </p>
+            <img src="img/team-workflow/repo-established.png" width="60%" alt="Repository established">
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                <b>Next, the team lead may make an initial commit.</b><br>
+                Commits are shown here as nodes or circles, though really they are stored as hashes.<br>
+                Don't worry about those technical details for now though. Let's just focus on team workflow.
+            </p>
+            <img src="img/team-workflow/initial-commit.png" width="60%" alt="Initial commit to repository">
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                <b>Now, each developer should create their own development branches.</b><br>
+                This allows them to develop independently without interfering with each other.<br>
+                For this scenario, the team lead is not a developer but acts as the integration lead.<br>
+                (You'll see what that means shortly)
+            </p>
+            <img src="img/team-workflow/create-dev-branches.png" width="60%" alt="Creation of developer branches">
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                <b>
+                    The team lead may task each developer differently.<br>
+                    In their own time, each developer makes updates on their development branches.
+                </b>
+            </p>
+            <p class="common-text-left">
+                At this point, C3PO has successfully tested his code and is ready to merge it into master for the rest
+                of the team.<br><br>
+                R2D2 has committed some code, but he has either not yet tested it or is not ready to push it to the
+                rest of the team, as he may want to make some other updates later.
+            </p>
+            <img src="img/team-workflow/independent-commits.png" width="60%" alt="Independent developer commits">
+        </section>
+
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center" style="font-size:22px;">
+                After testing his code, C3PO files a <b>pull request</b> to notify the <b>integration lead</b>.
+            </p>
+            <img src="img/team-workflow/pull-request.png" width="50%" alt="Pull request">
+            <p class="common-text-justified" style="font-size:18px;">
+                The purpose of a pull request is to help prevent buggy or undesirable code from being pushed into a
+                working branch. It’s also just helpful to facilitate communication amongst a team to prevent bad updates
+                from getting into the repository.
+
+                It is <b>very important that the master branch always exists in a good, clean, valid state</b>.
+                It assists in incremental delivery to customers, provides a solid baseline for any newcomers, and acts
+                as a great reference for the entire repository.<br><br>
+
+                Not all repositories use pull requests. Branches, such as the master branch,
+                can be locked to prevent uncoordinated changes, but no branches are locked by default.
+                Some repositories are configured without locks on any branches. In this case, it is highly recommended
+                that the developer communicate with the team lead prior to bringing in any code from his development
+                branch to the master or any other branch.<br><br>
+
+                Regardless of how the communication occurs, the team lead will likely want to test the code out
+                him/herself prior to bring it into the master branch.
+            </p>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p class="common-text-center">
+                The integration lead creates a branch to merge and test the developer's updates.
+            </p>
+            <img src="img/team-workflow/integration-branch.png" width="50%" alt="Integration branch">
+            <p class="common-text-justified" style="font-size:18px;">
+                It is good practice to create a branch off the HEAD of the mainline branch for integration testing.
+                <br>
+                (The HEAD of any branch is essentially the most-recent commit in the history of the
+                branch. You may have heard of or seen references to a ’detached head’ state. Being in a
+                ‘detached head’ state within Git simply means that you are NOT at the tip of your branch.)
+                <br><br>
+                <b>
+                    If testing fails or merging conflicts raise additional questions, the team lead may contact the
+                    developer with questions. If this is the case, mainline will NOT be updated.
+                </b>
+
+            </p>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p>
+                Merging Into Mainline
+            </p>
+            <img src="img/team-workflow/merge-into-mainline.png" width="50%" alt="Merge updates into mainline">
+            <p class="common-text-center">
+                If all goes well in merging and testing, Obi-Wan will accept C3PO’s changes and merge them into the
+                mainline branch.
+            </p>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p>
+                Notifying Developers (Optional)
+            </p>
+            <img src="img/team-workflow/update-notification.png" width="50%" alt="Developers are notified of updates">
+            <p class="common-text-justified">
+                As team lead, Obi-Wan may choose to alert (either manually or through automatic notifications) the rest
+                of the team that updates from the mainline branch are ready to pull.
+                <br><br>
+                He does not need to alert them at all though -- as <b>regularly fetching and pulling updates from the
+                remote repository is simply good practice when using Git</b> (and fundamental to efficient software
+                development).
+            </p>
+        </section>
+        <section data-background="white" data-transition="fade-in fade-out">
+            <p>
+                Other Developers Pull in Updates
+            </p>
+            <img src="img/team-workflow/pull-from-mainline.png" width="40%" alt="Developers pull updates from mainline">
+            <p class="common-text-justified">
+                Regardless of how they find out, developers will pull in updates from mainline into their own
+                branches. Depending on the situation, this may create merge conflicts. We will cover the handling of merge
+                conflicts in another lesson. For understanding the general workflow though, let’s assume the merging
+                went smoothly. After pulling in updates from mainline, R2D2 can now see C3PO’s additions!
+                He may be able to use C3PO’s code in his own work – thus <b>collaboration amongst the team is clean,
+                simple, and organized.</b>
+            </p>
+        </section>
     </div>
 </div>
 
@@ -65,16 +241,15 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+Reveal.initialize({
+    hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+});
 </script>
 </body>
 </html>

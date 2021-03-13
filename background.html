@@ -139,20 +139,26 @@
             </ul>
             </p>
         </section>
-        <section data-transition="slide-in zoom-out">
-            <h4>Supports Any Workflow Type</h4>
-            <b>Subversion-Style Workflow</b>
-            <img src="img/workflow/subversion-style.png">
-        </section>
-        <section data-transition="zoom-in zoom-out">
-            <h4>Supports Any Workflow Type</h4>
-            <b>Integration Manager Workflow</b>
-            <img src="img/workflow/integration-manager.png">
-        </section>
-        <section data-transition="zoom-in zoom-out">
-            <h4>Supports Any Workflow Type</h4>
-            <b>Dictator & Lieutenants Workflow</b>
-            <img src="img/workflow/dictator-lieutenants.png">
+        <section>
+            <section>
+                <h4>Supports Any Workflow Type</h4>
+                <p class="common-text-center">
+                    Git supports a variety of workflow types.<br>
+                    Click the down arrow to view some of them!
+                </p>
+            </section>
+            <section>
+                <b>Subversion-Style Workflow</b>
+                <img src="img/workflow/subversion-style.png">
+            </section>
+            <section>
+                <b>Integration Manager Workflow</b>
+                <img src="img/workflow/integration-manager.png">
+            </section>
+            <section>
+                <b>Dictator & Lieutenants Workflow</b>
+                <img src="img/workflow/dictator-lieutenants.png">
+            </section>
         </section>
         <section data-transition="grow">
             <div style="width: 100%; height: 100%;">
@@ -318,7 +324,7 @@
                 </ul>
                 <img src="img/binary-files/mgmt-without-git-lfs.png"
                      alt="Schematic for Binary File Management without Git LFS"><br>
-                <p class="common-text-justified" style="color: green;">
+                <p class="common-text-justified" style="color: yellow;">
                     This helps keep the size of your code-based repository small, which is especially useful when
                     sharing (via cloning) with customers or peers.
                 </p>
@@ -332,38 +338,15 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+Reveal.initialize({
+    hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+});
 </script>
 </body>
 </html>
