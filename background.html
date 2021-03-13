@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="dist/theme/black.css" id="theme">
     <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
     <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
 
     <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
@@ -52,8 +53,108 @@
 <!-- Content -->
 <div id="content" class="reveal">
     <div class="slides">
-        <section>Background Slide 1</section>
-        <section>Background Slide 2</section>
+        <section>
+            <h1>What is Git?</h1>
+            <p style="text-align:left; margin: 0% 10% 0% 10%">
+                Git is an...<br>
+                &emsp; open-source,<br>
+                &emsp; distributed,<br>
+                &emsp; version control system<br>
+                &emsp; designed for speed and efficiency<br>
+                &emsp; that supports multiple workflow types
+            </p>
+        </section>
+        <section>
+            <div style="width: 100%;">
+                <h3>Version Control</h3>
+                <div style="width: 50%; height: 100%; float: left;">
+                    <img src="img/background/version_control_system.png" alt="Version Control System Schematic"
+                         width="100%" height="100%">
+                </div>
+                <div style="margin-left: 50%; height: 100%; padding: 70px 0;">
+                    <p style="font-size:24px; text-align: left;">
+                        Version control is a system that records changes to a file or set of files over time, so
+                        that you can recall specific versions later<br>
+                        <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
+                           target="_blank">- Git-SCM</a>
+                        <br><br>
+                        Think of version control as a time machine that
+                        let's you look at history and go forwards and backwards though it!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Open-Source</h3>
+            <p style="font-size:24px; text-align: left;">
+                “Git is released under the GNU General Public License version 2.0, which is an open source license. The
+                Git project chose to use GPLv2 to guarantee your freedom to share and change free software---to make
+                sure the software is free for all its users.” <a href="https://git-scm.com/about/">Git SCM - About</a>
+                <br>
+                <a href="https://git-scm.com/downloads">
+                    <img src="img/background/open-source.png" alt="Download Page for Git" width="100%" height="100%">
+                </a>
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h3>Distributed</h3>
+            <p>
+                Everything is fast
+                <br><br>
+                Every clone is a backup
+                <br><br>
+                You can work offine
+            </p>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h3>Distributed</h3>
+            <p>
+                No network needed to...<br>
+            <ul>
+                <li>Perfom a diff</li>
+                <li>View file history</li>
+                <li>Commit changes</li>
+                <li>Merge branches</li>
+                <li>Obtain another revision of a file</li>
+                <li>Switch branches</li>
+            </ul>
+            </p>
+        </section>
+        <section data-transition="slide-in zoom-out">
+            <h4>Supports Any Workflow Type</h4>
+            <b>Subversion-Style Workflow</b>
+            <img src="img/workflow/subversion-style.png">
+        </section>
+        <section data-transition="zoom-in zoom-out">
+            <h4>Supports Any Workflow Type</h4>
+            <b>Integration Manager Workflow</b>
+            <img src="img/workflow/integration-manager.png">
+        </section>
+        <section data-transition="zoom-in zoom-out">
+            <h4>Supports Any Workflow Type</h4>
+            <b>Dictator & Lieutenants Workflow</b>
+            <img src="img/workflow/dictator-lieutenants.png">
+        </section>
+        <section data-transition="grow">
+            <div style="width: 100%; height: 100%;">
+                <div style="float: left; width: 33%; height: inherit;">
+                    <img src="img/icon/git.png" width="72%"><br>
+                    Distributed
+                </div>
+                <div style="float: left; width: 33%; height: inherit; padding: 70px 0;">
+                    <p style="font-size:50px; text-align: center;">
+                        Git vs. SVN
+                    </p>
+                </div>
+                <div style="float: left; width: 33%; height: inherit;">
+                    <img src="img/icon/subversion.png" width="80%"><br>
+                    Centralized
+                </div>
+            </div>
+        </section>
+        <section>
+
+        </section>
     </div>
 </div>
 
@@ -71,6 +172,16 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
+
+
+
+
+
+
+
+
+
 
 </script>
 </body>
