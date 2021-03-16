@@ -1,8 +1,8 @@
 .ddsmoothmenu{
 font: bold 16px Verdana;
 background: #000000; /*background of menu bar (default state)*/
-width: 100%;
-height: 35px;
+width: 3000px;
+height: 37px;
 position: absolute;
 }
 

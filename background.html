@@ -24,35 +24,59 @@
 </head>
 <body>
 <!-- Navigation -->
+
+<!--&lt;!&ndash; Load an icon library to show a hamburger menu (bars) on small screens &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--&lt;!&ndash; Top Navigation Menu FIXME &ndash;&gt;-->
+<!--<div class="topnav">-->
+    <!--<p class="active">&emsp; Background</p>-->
+    <!--&lt;!&ndash; Navigation links (hidden by default) &ndash;&gt;-->
+    <!--<div id="myLinks">-->
+        <!--<a href="index.html">About</a>-->
+        <!--<a href="background.html" style="color:white; background-color:#1A1A1A">Background</a>-->
+        <!--<a href="team_workflow.html">Team Workflow</a>-->
+        <!--<a href="installation.html">Installation</a>-->
+                <!--&lt;!&ndash;<li><a href="installation-cli.html">CLI</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="installation-gui.html">GUI</a></li>&ndash;&gt;-->
+        <!--<a href="">Basic Commands</a>-->
+                <!--&lt;!&ndash;<li><a href="basic-cmds-cli.html">CLI</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="basic-cmds-gui.html">GUI</a></li>&ndash;&gt;-->
+        <!--<a href="">Merge Conflicts</a>-->
+            <!--&lt;!&ndash;<a href="merge-conflicts-cli.html">CLI</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="merge-conflicts-gui.html">GUI</a>&ndash;&gt;-->
+        <!--<a href="contact.html">Contact</a>-->
+    <!--</div>-->
+    <!--&lt;!&ndash; "Hamburger menu" / "Bar icon" to toggle the navigation links &ndash;&gt;-->
+    <!--<a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
+        <!--<i class="fa fa-bars"></i>-->
+    <!--</a>-->
+    <!--<script>-->
+        <!--function myFunction() {-->
+          <!--var x = document.getElementById("myLinks");-->
+          <!--if (x.style.display === "block") {-->
+            <!--x.style.display = "none";-->
+          <!--} else {-->
+            <!--x.style.display = "block";-->
+          <!--}-->
+        <!--}-->
+    <!--</script>-->
+<!--</div>-->
+
 <div id="nav" class="ddsmoothmenu">
     <div id="smoothmenu1" class="ddsmoothmenu">
         <ul>
             <li><a href="index.html">About</a></li>
             <li><a href="background.html" style="color:white; background-color:#1A1A1A">Background</a></li>
             <li><a href="team_workflow.html">Team Workflow</a></li>
-            <li><a href="">Installation</a>
-                <ul>
-                    <li><a href="installation-cli.html">CLI</a></li>
-                    <li><a href="installation-gui.html">GUI</a></li>
-                </ul>
-            </li>
-            <li><a href="">Basic Commands</a>
-                <ul>
-                    <li><a href="basic-cmds-cli.html">CLI</a></li>
-                    <li><a href="basic-cmds-gui.html">GUI</a></li>
-                </ul>
-            </li>
-            <li><a href="">Merge Conflicts</a>
-                <ul>
-                    <li><a href="merge-conflicts-cli.html">CLI</a></li>
-                    <li><a href="merge-conflicts-gui.html">GUI</a></li>
-                </ul>
-            </li>
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="">Basic Commands</a></li>
+            <li><a href="">Merge Conflicts</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <br style="clear: left"/>
     </div>
 </div>
+
 <!-- Content -->
 <div id="content" class="reveal">
     <div class="slides">
@@ -69,13 +93,13 @@
         </section>
         <section>
             <section>
-                <div style="width: 100%;">
+                <div class="div-whole-of-parts">
                     <h3>Version Control</h3>
-                    <div style="width: 50%; height: 100%; float: left;">
+                    <div class="div-left-half">
                         <img src="img/background/version_control_system.png" alt="Version Control System Schematic"
                              width="100%" height="100%">
                     </div>
-                    <div style="margin-left: 50%; height: 100%; padding: 40px 0;">
+                    <div class="div-right-half" style="padding: 40px 0;">
                         <p class="common-text-left">
                             Version control is a system that records changes to a file or set of files over time, so
                             that you can recall specific versions later<br>
@@ -161,17 +185,17 @@
             </section>
         </section>
         <section data-transition="grow">
-            <div style="width: 100%; height: 100%;">
-                <div style="float: left; width: 33%; height: inherit;">
+            <div class="div-whole-of-parts">
+                <div class="div-left-third">
                     <img src="img/icon/git.png" width="72%"><br>
                     Distributed
                 </div>
-                <div style="float: left; width: 33%; height: inherit; padding: 70px 0;">
+                <div class="div-middle-third" style="padding: 70px 0;">
                     <p style="font-size:50px; text-align: center;">
                         Git vs. SVN
                     </p>
                 </div>
-                <div style="float: left; width: 33%; height: inherit;">
+                <div class="div-right-third" style="float: left; width: 33%; height: inherit;">
                     <img src="img/icon/subversion.png" width="80%"><br>
                     Centralized
                 </div>

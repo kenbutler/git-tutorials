@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Git Tutorials | About</title>
+    <title>Git Tutorials | Installation</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="dist/reset.css">
@@ -28,27 +28,12 @@
 <div id="nav" class="ddsmoothmenu">
     <div id="smoothmenu1" class="ddsmoothmenu">
         <ul>
-            <li><a href="index.html" style="color:white; background-color:#1A1A1A">About</a></li>
+            <li><a href="index.html">About</a></li>
             <li><a href="background.html">Background</a></li>
             <li><a href="team_workflow.html">Team Workflow</a></li>
-            <li><a href="installation.html">Installation</a>
-                <ul>
-                    <li><a href="installation-cli.html">CLI</a></li>
-                    <li><a href="installation-gui.html">GUI</a></li>
-                </ul>
-            </li>
-            <li><a href="">Basic Commands</a>
-                <ul>
-                    <li><a href="basic-cmds-cli.html">CLI</a></li>
-                    <li><a href="basic-cmds-gui.html">GUI</a></li>
-                </ul>
-            </li>
-            <li><a href="">Merge Conflicts</a>
-                <ul>
-                    <li><a href="merge-conflicts-cli.html">CLI</a></li>
-                    <li><a href="merge-conflicts-gui.html">GUI</a></li>
-                </ul>
-            </li>
+            <li><a href="installation.html" style="color:white; background-color:#1A1A1A">Installation</a></li>
+            <li><a href="">Basic Commands</a></li>
+            <li><a href="">Merge Conflicts</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <br style="clear: left"/>
@@ -58,7 +43,24 @@
 <div id="content" class="reveal">
     <div class="slides">
         <section>
-            <h1>TEMPLATE ONLY</h1>
+            <div class="div-whole-of-parts">
+                <h3>How will you use Git?</h3>
+                <div class="div-left-half">
+                    <a href="installation-cli.html#/0/1">
+                        <img src="img/os/terminal.png" alt="Command Line Interface"
+                             width="70%" height="inherit">
+                    </a>
+                    <p class="common-text-center">Command Line Interface</p>
+                </div>
+                <div class="div-right-half" style="padding: 40px 0;">
+                    <a href="installation-gui.html">
+                        <img src="img/icon/sourcetree.png" alt="Sourcetree"
+                             width="60%" height="inherit">
+                    </a>
+                    <br>
+                    <p class="common-text-center">GUI (Sourcetree)</p>
+                </div>
+            </div>
         </section>
     </div>
 </div>
@@ -77,6 +79,7 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
 
 
 
