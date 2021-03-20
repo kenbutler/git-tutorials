@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Git Tutorials | About</title>
+    <title>Git Tutorials | Configuration</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="dist/reset.css">
@@ -35,6 +35,8 @@
             <li><a href="configuration.html" style="color:white; background-color:#1A1A1A">Configuration</a></li>
             <li><a href="">Basic Commands</a></li>
             <li><a href="">Merge Conflicts</a></li>
+            <li><a href="binary_files.html">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <br style="clear: left"/>
@@ -47,12 +49,13 @@
             <h3>Configuration</h3>
             <p class="common-text-left">
                 It's required to configure your user identity with Git. It's useful to configure a few other features as
-                well. Select the links below to jump to specific topics, or select the left arrow to begin viewing
+                well. Select the links below to jump to specific topics, or select the right arrow to begin viewing
                 everything.
             </p>
             <h4><a href="configuration.html#/2">User Identity</a></h4>
-            <h4><a href="">Diff and Merge Tools</a></h4>
-            <h4><a href="">Aliases</a></h4>
+            <h4><a href="configuration.html#/6">Diff and Merge Tools</a></h4>
+            <h4><a href="configuration.html#/10">Aliases</a></h4>
+            <h4><a href="binary_files.html">Binary File Management</a></h4>
         </section>
         <section>
             <h3>Configuration</h3>
@@ -187,28 +190,85 @@
             </p>
         </section>
         <section>
-            <b>Configuration: Diff and Merge Tools</b>
+            <h4>Configuration: Diff and Merge Tools</h4>
             <div class="div-whole-of-parts">
-                <div style="float: left; width: 100%; height: 30%;">
+                <div style="float: left; width: 100%; height: 20%;">
                     <p class="common-text-center">
                         Three, common tools for this are: BeyondCompare, Meld, and KDiff3
                         <br>
-                        <a href="https://www.slant.co/topics/1324/~best-diff-tools-for-git">
+                        <a href="https://www.slant.co/topics/1324/~best-diff-tools-for-git" target="_blank">
                             Check out a larger ranking of available tools as of 2018.
                         </a>
                     </p>
                 </div>
                 <div style="float: right; width: 100%; height: 50%;">
-                    <div style="float: left; width: 70%; padding: 50px 0;">
+                    <div style="float: left; width: 70%;">
                         <img src="img/diff-tools/diff-tool-sample.png" alt="BeyondCompare Example" width="70%">
                     </div>
                     <div style="float: right; width: 30%; text-align: left;">
-                        <img src="img/diff-tools/beyond-compare.png" alt="BeyondCompare" width="40%"><br>
-                        <img src="img/diff-tools/meld.png" alt="Meld" width="40%"><br>
-                        <img src="img/diff-tools/kdiff.png" alt="KDiff3" width="40%">
+                        <img src="img/diff-tools/beyond-compare.png" alt="BeyondCompare" width="40%"
+                             style="margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0;"><br>
+                        <img src="img/diff-tools/meld.png" alt="Meld" width="40%"
+                             style="margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0;"><br>
+                        <img src="img/diff-tools/kdiff.png" alt="KDiff3" width="40%"
+                             style="margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0;">
                     </div>
                 </div>
             </div>
+        </section>
+        <section>
+            <h4>Configuration: Diff Tools</h4>
+            <p class="common-text-justified">
+                Diff tools allow us to view differences between commits.
+                This can be especially useful when determining the cause of a bug.
+                Git will choose a difftool by default, if it is not set.
+                Here we can see how to set your configure Meld as your difftool.
+                Place this code within your .gitconfig file in your home directory.
+            </p>
+            <pre>
+                <code data-trim style="font-size: 18px; color: lime">
+                    [diff]
+                        tool = meld     # This sets the tools
+                    [difftool]
+                        prompt = false  # This prevents a confirmation prompt each time we try to open it
+                    [difftool "meld"]   # This sets command for opening the tool. Dependent on OS
+                        trustExitCode = true
+                        cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+                </code>
+            </pre>
+            <p class="common-text-justified">
+                To use this, you can simply enter <b>git difftool</b> on the command line to view your current changes.
+                If you want to inspect changes between two commits, use the following format:
+            </p>
+            <p class="code" style="font-size: 20px;">
+                git difftool [starting abbreviated commit hash] [ending abbreviated commit hash]
+            </p>
+        </section>
+        <section>
+            <h4>Configuration: Merge Tools</h4>
+            <p class="common-text-justified">
+                Merge tools allow us to visually resolve merge conflicts.
+                As before, Git will select a default mergetool if one is not set.
+                The setup for these is nearly identical to diff tools.
+                Place this code within your .gitconfig file in your home directory.
+            </p>
+            <pre>
+                <code data-trim style="font-size: 18px; color: lime">
+                    [merge]
+                        tool = meld     # This sets the tools
+                    [mergetool]
+                        prompt = false  # This prevents a confirmation prompt each time we try to open it
+                    [mergetool "meld"]   # This sets command for opening the tool. Dependent on OS
+                        trustExitCode = true
+                        cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+                </code>
+            </pre>
+            <p class="common-text-center">
+                You can use mergetool in the same way that you use difftool.<br>
+                <a href="https://blog.marcinchwedczuk.pl/use-meld-as-git-merge-diff-tool" target="_blank">
+                    This blog also provides insight for setting up Meld
+                </a>
+            </p>
         </section>
         <section>
             <section>
@@ -266,6 +326,16 @@
                 <img src="img/configuration/git-histc.png" alt="Example of using `git histc`" style="padding: 70px 0;">
             </section>
         </section>
+        <section>
+            <h3>Binary File Management & Git LFS</h3>
+            <p class="common-text-justified">
+                For configuration of Git LFS or general approach to binary file management, see the
+                <a href="binary_files.html">
+                    Binary Files
+                </a>
+                section
+            </p>
+        </section>
     </div>
 </div>
 
@@ -283,16 +353,6 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
-
-
-
-
-
-
-
-
-
-
 </script>
 </body>
 </html>

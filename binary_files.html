@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Git Tutorials | Binary Files</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <!-- Icon -->
+    <link rel="icon" href="img/icon/git.ico">
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript">ddlevelsmenu.setup("ddtopmenubar", "topbar")</script>
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="nav" class="ddsmoothmenu">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="team_workflow.html">Team Workflow</a></li>
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="basic_commands.html">Basic Commands</a></li>
+            <li><a href="merge_conflicts.html">Merge Conflicts</a></li>
+            <li><a href="binary_files.html" style="color:white; background-color:#1A1A1A">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <br style="clear: left"/>
+    </div>
+</div>
+<!-- Content -->
+<div id="content" class="reveal">
+    <div class="slides">
+        <section>
+            <h3>What are Binary Files?</h3>
+            <p class="common-text-justified">
+                Binary files are non-text files that require a computer program to interpret how the stored data is
+                formatted. Git relies on text to track changes, so binary files can be problematic.
+            </p>
+            <div style="width: 100%; height: 100%;">
+                <div style="float: left; width: 33%; height: 30%;">
+                    <img src="img/binary-files/images.png" width="35%"><br>
+                    Images
+                </div>
+                <div style="float: left; width: 33%; height: 30%;">
+                    <img src="img/binary-files/pdfs.png" width="30%"><br>
+                    PDFs
+                </div>
+                <div style="float: left; width: 33%; height: 30%;">
+                    <img src="img/binary-files/video.png" width="32%"><br>
+                    Video
+                </div>
+                <div style="float: right; width: 50%; height: 30%;">
+                    <img src="img/binary-files/ms-office.png" width="50%"><br>
+                    MS Office Products
+                </div>
+                <div style="float: right; width: 50%; height: 30%;">
+                    <img src="img/binary-files/cad.png" width="50%"><br>
+                    CAD Drawings
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Binary Files: Engineering Examples</h3>
+            <ul>
+                <li>Interface Control Documents</li>
+                <li>Software Design Documents</li>
+                <li>Visio Drawings</li>
+                <li>SolidWorks, AutoCAD, CATIA V5 drawings or animations</li>
+                <li>Binary data used for input</li>
+                <li>Catch-all: typically any file with a *.bin extension</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h3>Binary Files: Git's Solution</h3>
+                <h4>Git Large File Storage (LFS)</h4>
+                <ul style="font-size: 32px;">
+                    <li style="color: green;">Efficiently store large files</li>
+                    <li style="color: green;">Support file locking to prevent simultaneous changes of binary files</li>
+                    <li style="color: red;">
+                        Do NOT provide an easy way to view differences between versions of a binary file
+                    </li>
+                </ul>
+                <p class="common-text-center">
+                    <b>To use Git LFS, you will need a server that can handle this -- and not all servers do!
+                    </b><br>
+                    Click the down arrow for a recommended strategy when Git LFS is not available on your server.
+                </p>
+            </section>
+            <section>
+                <h3>Binary Files: Without Git LFS</h3>
+                <p class="common-text-center">
+                    <u>Keeping track of binary files can still be a good idea.</u><br>
+                    The following is a recommended strategy.
+                </p>
+                <ul style="font-size: 32px;">
+                    <li>Create a separate repository to hold binary files</li>
+                    <li>Avoid branching, as merge conflicts are probable</li>
+                </ul>
+                <img src="img/binary-files/mgmt-without-git-lfs.png"
+                     alt="Schematic for Binary File Management without Git LFS"><br>
+                <p class="common-text-justified" style="color: yellow;">
+                    This helps keep the size of your code-based repository small, which is especially useful when
+                    sharing (via cloning) with customers or peers.
+                </p>
+            </section>
+        </section>
+        <section>
+            <h4>Git LFS: Installation</h4>
+            <p class="common-text-justified">
+                <u>To apply Git LFS to distributed development, you will need a server that can handle it.</u>
+                <br><br>
+                You can still use it locally on your machine though. For example, it may still be relevant to you if you
+                are working on a personal project.
+                <br><br>
+                Git LFS must be installed on each user’s local machine using a package manager, such as Homebrew, yum,
+                apt, etc. You will also need to add it to your $PATH variable.
+            </p>
+            <p class="common-text-center">
+                Once git-lfs is on your path, execute the following:
+                <br>
+                (<u>You should only have to do this once!</u>)
+            </p>
+            <pre>
+                <code class="shell" data-trim style="font-size: 18px; color: lime">
+                    $ git lfs install
+                    Git LFS initialized.
+                </code>
+            </pre>
+            <p class="common-text-center">
+                Also see
+                <a href="https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage">
+                    GitHub's official documentation on installing Git LFS
+                </a>.
+            </p>
+        </section>
+        <section>
+            <h4>Git LFS: Repository Configuration</h4>
+            <div class="div-whole-of-parts">
+                <div style="width: 70%; height: inherit; float: left;">
+                    <img src="img/binary-files/server-config.png" alt="Example of server configuration for binary files"
+                         width="100%">
+                </div>
+                <div style="width: 30%; height: inherit; float: left; padding: 70px 0;">
+                    <p class="common-text-left">
+                        You will also need to update the settings of your repository on the server to allow for Git LFS.
+                    </p>
+                    <p class="common-text-left" style="color: yellow;">
+                        NOTE: Applying Git LFS to existing repos will NOT retroactively apply to previous commits. This
+                        would
+                        require rewriting history.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h4>Git LFS: Example Use Case</h4>
+            <p class="common-text-justified">
+                If we wanted to track modern PowerPoint files, we can navigate to the directory of the repository and
+                type:
+            </p>
+            <pre>
+                <code class="shell" data-trim style="font-size: 18px; color: lime">
+                    $ git lfs track “*.pptx”
+                    Tracking *.pptx
+                </code>
+            </pre>
+            <p class="common-text-justified" style="color: yellow;">
+                The quotes here are important, as they prevent the wildcard (*) from being expanded and creating
+                individual entries for each *.pptx file in your current directory.
+                <br><br>
+                This will create (or update) a .gitattributes file, which binds tracked file patterns to the Git LFS
+                filter. <b><u>This file needs to be added and committed to the repository!</u></b>
+            </p>
+        </section>
+        <section>
+            <h4>Git LFS: Example Use Case</h4>
+            <p class="common-text-center">
+                You can check what file patterns are monitored under Git LFS for a repository like so:
+            </p>
+            <pre>
+                <code class="shell" data-trim style="font-size: 18px; color: lime">
+                    $ git lfs track
+                    Listing tracked patterns
+                        *.pptx (.gitattributes)
+                    Listing excluded patterns
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h4>Git LFS: Further Resources and Tutorials</h4>
+            <ul>
+                <li>
+                    <a href="https://www.atlassian.com/git/tutorials/git-lfs">
+                        Atlassian
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/git-lfs/git-lfs/wiki/Tutorial">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://about.gitlab.com/2017/01/30/getting-started-with-git-lfs-tutorial/">
+                        GitLab
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+
+
+
+
+
+</script>
+</body>
+</html>

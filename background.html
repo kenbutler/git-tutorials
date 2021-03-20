@@ -72,6 +72,8 @@
             <li><a href="configuration.html">Configuration</a></li>
             <li><a href="">Basic Commands</a></li>
             <li><a href="">Merge Conflicts</a></li>
+            <li><a href="binary_files.html">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <br style="clear: left"/>
@@ -308,52 +310,13 @@
             </div>
         </section>
         <section>
-            <h3>Binary Files: Engineering Examples</h3>
-            <ul>
-                <li>Interface Control Documents</li>
-                <li>Software Design Documents</li>
-                <li>Visio Drawings</li>
-                <li>SolidWorks, AutoCAD, CATIA V5 drawings or animations</li>
-                <li>Binary data used for input</li>
-                <li>Catch-all: typically any file with a *.bin extension</li>
-            </ul>
-        </section>
-        <section>
-            <section>
-                <h3>Binary Files: Git's Solution</h3>
-                <h4>Git Large File Storage (LFS)</h4>
-                <ul style="font-size: 32px;">
-                    <li style="color: green;">Efficiently store large files</li>
-                    <li style="color: green;">Support file locking to prevent simultaneous changes of binary files</li>
-                    <li style="color: red;">
-                        Do NOT provide an easy way to view differences between versions of a binary file
-                    </li>
-                </ul>
-                <p class="common-text-center">
-                    <!-- FIXME: Updated installation HTML here -->
-                    Examples of installing and using Git LFS are explained in the <a
-                        href="installation.html">installation</a> module.<br><br>
-                    <b>To use Git LFS, you will need a server that can handle this -- and not all servers do!</b><br>
-                    Click the down arrow for a recommended strategy when Git LFS is not available on your server.
-                </p>
-            </section>
-            <section>
-                <h3>Binary Files: Without Git LFS</h3>
-                <p class="common-text-center">
-                    <u>Keeping track of binary files can still be a good idea.</u><br>
-                    The following is a recommended strategy.
-                </p>
-                <ul style="font-size: 32px;">
-                    <li>Create a separate repository to hold binary files</li>
-                    <li>Avoid branching, as merge conflicts are probable</li>
-                </ul>
-                <img src="img/binary-files/mgmt-without-git-lfs.png"
-                     alt="Schematic for Binary File Management without Git LFS"><br>
-                <p class="common-text-justified" style="color: yellow;">
-                    This helps keep the size of your code-based repository small, which is especially useful when
-                    sharing (via cloning) with customers or peers.
-                </p>
-            </section>
+            <p>
+                For more information on binary file management, including installation and configuration, visit the
+                <a href="binary_files.html">
+                    Binary Files
+                </a>
+                section.
+            </p>
         </section>
     </div>
 </div>

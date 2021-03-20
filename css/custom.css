@@ -55,6 +55,11 @@
     text-align: center;
 }
 
+.current {
+    color: white;
+    background-color: #1A1A1A;
+}
+
 <!---------- Top Navigation -------->
  /* Style the navigation menu */
 .topnav {

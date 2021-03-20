@@ -194,6 +194,16 @@ html.reveal-full-page {
 	color: #1b91ff;
 }
 
+.reveal .slides section h1,
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section h4,
+.reveal .slides section h5,
+.reveal .slides section h6 {
+	font-family: sans-serif;
+	text-transform: inherit;
+ }
+
 
 /*********************************************
  * DEFAULT ELEMENT STYLES
