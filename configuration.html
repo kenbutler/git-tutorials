@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Git Tutorials | Configuration</title>
+    <title>Git Tutorials | Merge Conflicts</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="dist/reset.css">
@@ -33,8 +33,8 @@
             <li><a href="team_workflow.html">Team Workflow</a></li>
             <li><a href="installation.html">Installation</a></li>
             <li><a href="configuration.html" style="color:white; background-color:#1A1A1A">Configuration</a></li>
-            <li><a href="">Basic Commands</a></li>
-            <li><a href="">Merge Conflicts</a></li>
+            <li><a href="basic_commands.html">Basic Commands</a></li>
+            <li><a href="merge_conflicts.html">Merge Conflicts</a></li>
             <li><a href="binary_files.html">Binary Files</a></li>
             <li><a href="advanced.html">Advanced</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -46,295 +46,24 @@
 <div id="content" class="reveal">
     <div class="slides">
         <section>
-            <h3>Configuration</h3>
-            <p class="common-text-left">
-                It's required to configure your user identity with Git. It's useful to configure a few other features as
-                well. Select the links below to jump to specific topics, or select the right arrow to begin viewing
-                everything.
-            </p>
-            <h4><a href="configuration.html#/2">User Identity</a></h4>
-            <h4><a href="configuration.html#/6">Diff and Merge Tools</a></h4>
-            <h4><a href="configuration.html#/10">Aliases</a></h4>
-            <h4><a href="binary_files.html">Binary File Management</a></h4>
-        </section>
-        <section>
-            <h3>Configuration</h3>
-            <p class="common-text-center">
-                General form of Git config command
-            </p>
-            <p class="code">
-                git config [options]
-            </p>
-            <p class="common-text-center">
-                List all the attributes of the current user's Git configuration
-            </p>
-            <p class="code">
-                git config --list
-            </p>
-        </section>
-        <section>
-            <h3>Configuration</h3>
-            <h4>User Identity</h4>
-            <p class="common-text-center">
-                View the user’s name and email the Git config is storing:
-            </p>
-            <p class="code">
-                git config user.name
-            </p>
-            <p class="code">
-                git config user.email
-            </p>
-            <p class="common-text-justified">
-                Using these commands, you can view what Git currently believes your name and email are. Sometimes what
-                Git shows, if anything, is not always right though, and we need a way to change that.
-            </p>
-            <p class="common-text-center">
-                Let’s play out a scenario.
-            </p>
-        </section>
-        <section data-transition="fade-in" data-background="white">
             <div class="div-whole-of-parts">
-                <div style="float: left; width: 100%; height: 40%">
-                    <h3>Configuration: User Identity</h3>
-                    <p class="common-text-center">
-                        This developer's current Git user identity is shown below. She wants to correct this, though, to
-                        be the actress's (or...developer's) <u>name</u> rather than her <u>character</u>.
-                    </p>
-                </div>
-                <div style="float: right; width: 50%; height: 60%; padding: 40px 0;">
-                    <p style="text-align: left; font-size: 32px;">
-                        <b>Name</b>: Princess Leia
-                    </p>
-                    <p class="fragment" style="text-align: left; font-size: 32px;">
-                        &emsp; &emsp; ---> <b>Carrie Fisher</b>
-                    </p>
-                    <p style="text-align: left; font-size: 32px;">
-                        <b>Email</b>: Princess.Leia@gmail.com
-                    </p>
-                    <p class="fragment" style="text-align: left; font-size: 32px;">
-                        &emsp; &emsp; ---> <b>Carrie.Fisher@gmail.com</b>
-                    </p>
-                </div>
-                <div style="float: right; width: 50%; height: 60%;">
-                    <img src="img/character/Princess-Leia.png" alt="Princess Leia" width="50%">
-                </div>
-            </div>
-        </section>
-        <section data-transition="fade-in" data-background="white">
-            <div class="div-whole-of-parts">
-                <div style="float: left; width: 40%; height: 40%; padding: 70px 0;">
-                    <img src="img/character/Princess-Leia.png" alt="Princess Leia" width="50%">
-                </div>
-                <div style="float: left; width: 60%; height: 40%">
-                    <p class="common-text-center">
-                        1.) Update the user's <u>name</u>
-                    </p>
-                    <p class="code" style="color: green;">
-                        git config user.name "Carrie Fisher"
-                    </p>
-                    <p class="common-text-center">
-                        2.) Update the user's <u>email</u>
-                    </p>
-                    <p class="code" style="color: green;">
-                        git config user.email "Carrie.Fisher@gmail.com"
-                    </p>
-                    <p class="common-text-justified">
-                        This will update the user's Git identity <u>locally</u>, meaning only for the current repository
-                        she is working with. If she wanted to update it for <u>all</u> repositories on her computer, she
-                        could add the `--global` flag, like so:
-                    </p>
-                    <p class="code" style="color: green;">
-                        git config --global user.email "Carrie.Fisher@gmail.com"
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section data-transition="fade-in" data-background="white">
-            <p class="common-text-justified">
-                This initial configuration is important for documentation. Using the command `git log`, anyone can look
-                back through the history of commits and see who made a change, when, what about, and how to contact that
-                user.
-            </p>
-            <p class="common-text-justified" style="color: red;">
-                Note that changing your user identity will <u>not</u> retroactively change details of a
-                previous commit message, as seen in the example below.
-            </p>
-            <pre>
-                <code class="shell" data-trim style="font-size: 18px; color: lime">
-                    $ git log
-                    commit e73f0226c6d4d0229d35140cbee96074de485299 (HEAD -> master)
-                    Author: Carrie Fisher &lt;Carrie.Fisher@gmail.com&gt;
-                    Date:   Wed Dec 5 23:40:10 2021 -0500
-
-                        Created distress message to Obi-Wan Kenobi.
-
-                    commit 102b65127502a3e57319c77acc213fe30cd16d96
-                    Author: Princess Leia &lt;Princess.Leia@gmail.com&gt;
-                    Date:   Wed Dec 4 12:22:02 2021 -0500
-
-                        Added documentation regarding escape plan.
-                </code>
-            </pre>
-        </section>
-        <section data-transition="fade-in">
-            <h3>Configuration</h3>
-            <h4>Diff and Merge Tools</h4>
-            <p class="common-text-justified">
-                When using Git, you’ll quickly realize that comparing different versions of a file or merging changes
-                together can get a bit tedious without another tool.
-
-                There are a variety of tools on the Internet that can help you tremendously in viewing different
-                versions of a file, handling Git conflicts, and more.
-
-                You’ll likely want to hook one of these into your Git configuration.
-            </p>
-        </section>
-        <section>
-            <h4>Configuration: Diff and Merge Tools</h4>
-            <div class="div-whole-of-parts">
-                <div style="float: left; width: 100%; height: 20%;">
-                    <p class="common-text-center">
-                        Three, common tools for this are: BeyondCompare, Meld, and KDiff3
-                        <br>
-                        <a href="https://www.slant.co/topics/1324/~best-diff-tools-for-git" target="_blank">
-                            Check out a larger ranking of available tools as of 2018.
-                        </a>
-                    </p>
-                </div>
-                <div style="float: right; width: 100%; height: 50%;">
-                    <div style="float: left; width: 70%;">
-                        <img src="img/diff-tools/diff-tool-sample.png" alt="BeyondCompare Example" width="70%">
-                    </div>
-                    <div style="float: right; width: 30%; text-align: left;">
-                        <img src="img/diff-tools/beyond-compare.png" alt="BeyondCompare" width="40%"
-                             style="margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0;"><br>
-                        <img src="img/diff-tools/meld.png" alt="Meld" width="40%"
-                             style="margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0;"><br>
-                        <img src="img/diff-tools/kdiff.png" alt="KDiff3" width="40%"
-                             style="margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0;">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h4>Configuration: Diff Tools</h4>
-            <p class="common-text-justified">
-                Diff tools allow us to view differences between commits.
-                This can be especially useful when determining the cause of a bug.
-                Git will choose a difftool by default, if it is not set.
-                Here we can see how to set your configure Meld as your difftool.
-                Place this code within your .gitconfig file in your home directory.
-            </p>
-            <pre>
-                <code data-trim style="font-size: 18px; color: lime">
-                    [diff]
-                        tool = meld     # This sets the tools
-                    [difftool]
-                        prompt = false  # This prevents a confirmation prompt each time we try to open it
-                    [difftool "meld"]   # This sets command for opening the tool. Dependent on OS
-                        trustExitCode = true
-                        cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-                </code>
-            </pre>
-            <p class="common-text-justified">
-                To use this, you can simply enter <b>git difftool</b> on the command line to view your current changes.
-                If you want to inspect changes between two commits, use the following format:
-            </p>
-            <p class="code" style="font-size: 20px;">
-                git difftool [starting abbreviated commit hash] [ending abbreviated commit hash]
-            </p>
-        </section>
-        <section>
-            <h4>Configuration: Merge Tools</h4>
-            <p class="common-text-justified">
-                Merge tools allow us to visually resolve merge conflicts.
-                As before, Git will select a default mergetool if one is not set.
-                The setup for these is nearly identical to diff tools.
-                Place this code within your .gitconfig file in your home directory.
-            </p>
-            <pre>
-                <code data-trim style="font-size: 18px; color: lime">
-                    [merge]
-                        tool = meld     # This sets the tools
-                    [mergetool]
-                        prompt = false  # This prevents a confirmation prompt each time we try to open it
-                    [mergetool "meld"]   # This sets command for opening the tool. Dependent on OS
-                        trustExitCode = true
-                        cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
-                </code>
-            </pre>
-            <p class="common-text-center">
-                You can use mergetool in the same way that you use difftool.<br>
-                <a href="https://blog.marcinchwedczuk.pl/use-meld-as-git-merge-diff-tool" target="_blank">
-                    This blog also provides insight for setting up Meld
-                </a>
-            </p>
-        </section>
-        <section>
-            <section>
-                <h3>Configuration</h3>
-                <h4>Aliases</h4>
-                <p class="common-text-justified">
-                    Git aliases are similar in nature to regular aliases one might set in a Bash profile.
-                    We can use them to save complicated Git commands in a concise form.
-                    Below are some that I have found useful.
-                </p>
-                <p class="common-text-center" style="font-size: 20px;">
-                    (These belong in the <b>.gitconfig</b> file in your home directory.)
-                </p>
-                <pre>
-                    <code class="shell" data-trim style="font-size: 18px; color: lime">
-                        [alias]
-                            hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso
-                            histf = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso --name-status
-                            histc = log --graph --pretty=oneline --abbrev-commit
-                    </code>
-                </pre>
-                <p class="common-text-center">
-                    Click the down arrow for explanations of each of these flags<br>
-                    <a href="https://git-scm.com/docs/git-log" target="_blank">
-                        Further details and more git log flags can be found here
+                <h3>How will you use Git?</h3>
+                <div class="div-left-half">
+                    <a href="configuration-cli.html">
+                        <img src="img/os/terminal.png" alt="Command Line Interface"
+                             width="70%" height="inherit">
                     </a>
-                </p>
-            </section>
-            <section>
-                <h4>Configuration: Aliases -- Flags Explained</h4>
-                <p class="common-text-left">
-                    <b>--pretty</b><br>
-                    If specified as `oneline`, this will condense the log to a single line.
-                    Otherwise, you can specify the format of the log message you desire.
-                    <a href="https://git-scm.com/docs/git-log" target="_blank">
-                        Format placeholders are found here (search for 'format:&lt;string&gt;')
+                    <p class="common-text-center">Command Line Interface</p>
+                </div>
+                <div class="div-right-half" style="padding: 40px 0;">
+                    <a href="">
+                        <img src="img/icon/sourcetree.png" alt="Sourcetree"
+                             width="60%" height="inherit">
                     </a>
-                    <br><br>
-                    <b>--graph</b><br>
-                    This options draws a text-based graphical representation of the commit history on the left hand
-                    side of the output. Select the down arrow for how this looks with `git histc`.
-                    <br><br>
-                    <b>--date</b><br>
-                    This controls how the date timestamp is presented in the log message.
-                    <br><br>
-                    <b>--name-status</b><br>
-                    This contents the log message to show only the name and status of changed files.
-                    <br><br>
-                    <b>--abbrev-commit</b><br>
-                    Instead of showing the full 40-byte hexadecimal commit object name, show a prefix that names the
-                    object uniquely.
-                </p>
-            </section>
-            <section>
-                <img src="img/configuration/git-histc.png" alt="Example of using `git histc`" style="padding: 70px 0;">
-            </section>
-        </section>
-        <section>
-            <h3>Binary File Management & Git LFS</h3>
-            <p class="common-text-justified">
-                For configuration of Git LFS or general approach to binary file management, see the
-                <a href="binary_files.html">
-                    Binary Files
-                </a>
-                section
-            </p>
+                    <br>
+                    <p class="common-text-center">GUI (Sourcetree)</p>
+                </div>
+            </div>
         </section>
     </div>
 </div>
