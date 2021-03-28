@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Git Tutorials | SourceTree Installation</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <!-- Icon -->
+    <link rel="icon" href="img/icon/git.ico">
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript">ddlevelsmenu.setup("ddtopmenubar", "topbar")</script>
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="nav" class="ddsmoothmenu">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="team_workflow.html">Team Workflow</a></li>
+            <li><a href="installation.html" style="color:white; background-color:#1A1A1A">Installation</a></li>
+            <li><a href="security_protocol.html">Security Protocol</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="basic_commands.html">Basics</a></li>
+            <li><a href="merge_conflicts.html">Merge Conflicts</a></li>
+            <li><a href="binary_files.html">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <br style="clear: left"/>
+    </div>
+</div>
+<!-- Content -->
+<div id="content" class="reveal">
+    <div class="slides">
+        <section>
+            <img src="img/icon/sourcetree.png" alt="SourceTree" width="40%" height="inherit">
+            <h4 style="color: red;">Important Note</h4>
+            <p class="common-text-center">
+                SourceTree is currently only available for Windows and Macintosh systems.
+                <br>
+                <a href="https://community.atlassian.com/t5/Sourcetree-questions/SourceTree-for-Linux/qaq-p/255473"
+                   target="_blank">
+                    The creator of SourceTree, Atlassian, has openly stated they are not pursuing compatibility with
+                    Linux-based systems.
+                </a>
+            </p>
+        </section>
+        <section>
+            <img src="img/icon/sourcetree.png" alt="SourceTree" width="20%" height="inherit">
+            <br>
+            <img src="img/icon/atlassian.png" alt="Atlassian" width="25%" height="inherit">
+            <p class="common-text-justified">
+                SourceTree is an Atlassian product. Atlassian realized that not all of its users would be comfortable
+                with using the command line, so they provided a clean, graphical user interface to help users manage
+                repositories.
+                <br><br>
+                Essentially SourceTree is a desktop app that helps you use Git functionality with your repositories.
+            </p>
+        </section>
+        <section>
+            <h4 style="color: yellow;">A Common Misconception</h4>
+            <p class="common-text-justified">
+                Visiting GitHub, Bitbucket, or other Git servers in your web browser will <u>not</u> allow you to clone
+                down a copy of your repository. Bitbucket, for example, is merely an interface for <u>viewing</u>
+                elements of your repository. SourceTree offers methods for cloning.
+            </p>
+        </section>
+        <section>
+            <a href="https://www.sourcetreeapp.com/" target="_blank">
+                <img src="img/install/sourcetree/download.png" alt="Download SourceTree" width="80%">
+            </a>
+            <p class="common-text-center">
+                <a href="https://www.sourcetreeapp.com/" target="_blank">Download SourceTree</a>
+                <br>
+                For Mac users, after unzipping your download, it is recommended to move the actual SourceTree
+                application to your Applications directory.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <p class="common-text-center">
+                Once you complete the download and decompress the file, open the application.
+                <br><br>
+                If you've never used Git on your computer, you should see a registration page similar to this.
+            </p>
+            <img src="img/install/sourcetree/registration.png" alt="SourceTree Registration" width="60%">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <p class="common-text-center">
+                Atlassian may require you to create a free Bitbucket account.
+                <br>
+                (Bitbucket is their tool for repository hosting)
+            </p>
+            <img src="img/install/sourcetree/registration.png" alt="Server Registration" width="60%">
+            <p class="common-text-left">
+                If you prefer another tool (e.g. GitHub, GitLab, etc.), this can be configured later.
+                For now, just create a free account to get past this.
+                Once you have an account, login appropriately at this screen.
+            </p>
+        </section>
+        <section>
+            <p class="common-text-center">
+                Next, you will be asked to configure your Git identity within SourceTree.
+                <br>
+                For example, this scenario shows the infamous George P. Burdell setting his user identity.
+            </p>
+            <img src="img/install/sourcetree/user-config-initial.png" alt="SourceTree User Configuration on Install"
+                 width="50%">
+            <p class="common-text-justified" style="color: yellow;">
+                <b><u>It is important to be truthful and accurate in your user identity configuration</u></b>
+                <br>
+                This is your Git configuration and marks your commits with your name and email. As an convenient option,
+                you may also select the checkbox to determine whether or not these credentials should be globally
+                applied to all repositories on your computer.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <div class="div-whole-of-parts">
+                <div style="width: 40%; height: inherit; float: left; padding: 70px 0;">
+                    <p class="common-text-left">
+                        After user identity configuration...
+                        <br><br>
+                        If you connected to a server, you will be brought to the "Remote" tab by default, as this
+                        image shows. You should be able to see all of the repositories available to you on the remote
+                        server (i.e. the same you would see by logging into the associated website, such as GitHub or
+                        Bitbucket).
+                        <br><br>
+                        If you did <u>not</u> connect to a server, you may be on the Local tab with an empty repository
+                        list.
+                    </p>
+                </div>
+                <div style="width: 60%; height: inherit; float: left;">
+                    <img src="img/install/sourcetree/view-remote.png"
+                         alt="Repository listing associated with remote server">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <div class="div-whole-of-parts">
+                <div style="width: 40%; height: inherit; float: left; padding: 70px 0;">
+                    <p class="common-text-left">
+                        You can see that every remote project here has a ”Clone” button to the right of it. You can use
+                        this button to clone down repositories.
+                        <br><br>
+                        In order to successfully clone down a repository, you'll need to ensure the
+                        <a href="" target="_blank">security protocol</a>
+                        is configured correctly between your computer and the repository server.
+                        <br><br>
+                        If you have already cloned down a repository, you will see the branch that you have checked out.
+                        We will see this shortly.
+                    </p>
+                </div>
+                <div style="width: 60%; height: inherit; float: left;">
+                    <img src="img/install/sourcetree/clone.png" alt="Clone button">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <div class="div-whole-of-parts">
+                <div style="width: 40%; height: inherit; float: left; padding: 70px 0;">
+                    <p class="common-text-left">
+                        When you select "Clone", SourceTree will ask you to specify a destination path on your local
+                        computer and a name of a directory to place it in. Typically leaving the defaults in place makes
+                        the most sense.
+                        <br><br>
+                        Once you’ve cloned down a repository, you’re ready to get to work!
+                    </p>
+                </div>
+                <div style="width: 60%; height: inherit; float: left;">
+                    <img src="img/install/sourcetree/clone-example.png" alt="Clone example">
+                </div>
+            </div>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <div class="div-whole-of-parts">
+                <div style="width: 60%; height: inherit; float: left;">
+                    <img src="img/install/sourcetree/view-local.png"
+                         alt="Listing associated with local repositories">
+                </div>
+                <div style="width: 40%; height: inherit; float: left; padding: 70px 0;">
+                    <p class="common-text-left">
+                        If you select the ”Local” tab, you will see any repositories that you have
+                        <br>
+                        (a) cloned down, or
+                        <br>
+                        (b) created locally and hooked into SourceTree.
+                        <br><br>
+                        <b>
+                            <u>
+                                Local repositories may only be local to your machine, whereas remote repositories are
+                                guaranteed to exist on the server.
+                            </u>
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <div style="width: 60%; height: inherit; float: left;">
+                <img src="img/install/sourcetree/branch.png" alt="Branch button">
+            </div>
+            <div style="width: 40%; height: inherit; float: left; padding: 70px 0;">
+                <p class="common-text-left">
+                    All of your local repositories -- either from cloning down or creating in isolation -- will indicate
+                    which branch is currently checked out.
+                    <br><br>
+                    In this example, we have currently have the <b>dev_obiwan</b> branch checked out.
+                </p>
+            </div>
+        </section>
+        <section>
+            <p class="common-text-justified">
+                To view the account(s) associated with SourceTree, either (a) select the gear in the top-right corner
+                and select “Accounts…” or (b) select Preferences from the program menu. Here we can see my account
+                information. You can double-click the account to view more details.
+            </p>
+            <div class="div-whole-of-parts">
+                <div style="width: 30%; height: inherit; float: left; padding: 40px 0;">
+                    <img src="img/install/sourcetree/gear-options.png" alt="Options from gear button">
+                </div>
+                <div style="width: 70%; height: inherit; float: left;">
+                    <img src="img/install/sourcetree/current-account.png" alt="Account example">
+                </div>
+            </div>
+        </section>
+        <section>
+            In order to securely connect to a remote server, you will need to
+            <a href="security_protocol.html" target="_blank">configure the relevant security protocol</a>.
+            <br><br>
+            (Link will open in new tab. Click right arrow to continue.)
+        </section>
+        <section>
+            <h4>Disconnected Account</h4>
+            <div class="div-whole-of-parts">
+                <div style="width: 40%; height: inherit; float: left; padding: 80px 0;">
+                    <p class="common-text-justified">
+                        If at any point you select the ”Remote” tab and see a screen like this, you’ll need to ensure
+                        your account is properly registered and connected to its associated server.
+                        <br><br>
+                        To add or view your accounts, again either select “Accounts…” from the gear in the top-right
+                        corner or visit Preferences.
+                    </p>
+                </div>
+                <div style="width: 60%; height: inherit; float: left;">
+                    <img src="img/install/sourcetree/disconnected-account.png" alt="Disconnected Account" width="80%">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h4>Binary Files and SourceTree</h4>
+            <p class="common-text-justified">
+                Fortunately, Git LFS is bundled with SourceTree!
+                If you’ve installed SourceTree, Git LFS has been initialized and added to your local machine’s path.
+            </p>
+            <p class="common-text-center">
+                <u><b>But wait – there’s more!</b></u>
+                <br>
+                (Click the right arrow to quench your suspense...)
+            </p>
+        </section>
+        <section>
+            <h4>Binary Files and SourceTree</h4>
+            <div class="div-whole-of-parts">
+                <div style="width: 70%; height: inherit; float: left;">
+                    <img src="img/install/git-lfs-server.png" alt="Configuring Git LFS on Server">
+                </div>
+                <div style="width: 30%; height: inherit; float: left; padding: 40px 0;">
+                    <p class="common-text-left">
+                        You will also need to update the settings of the applicable repositories on their respective
+                        servers to allow for Git LFS.
+                    </p>
+                    <p class="common-text-left" style="color: yellow;">
+                        <u>Note</u>
+                        <br>
+                        Applying Git LFS to existing repos will NOT retroactively apply to previous commits. This
+                        would require rewriting history.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

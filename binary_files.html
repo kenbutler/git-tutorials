@@ -32,8 +32,9 @@
             <li><a href="background.html">Background</a></li>
             <li><a href="team_workflow.html">Team Workflow</a></li>
             <li><a href="installation.html">Installation</a></li>
+            <li><a href="security_protocol.html">Security Protocol</a></li>
             <li><a href="configuration.html">Configuration</a></li>
-            <li><a href="basic_commands.html">Basic Commands</a></li>
+            <li><a href="basic_commands.html">Basics</a></li>
             <li><a href="merge_conflicts.html">Merge Conflicts</a></li>
             <li><a href="binary_files.html" style="color:white; background-color:#1A1A1A">Binary Files</a></li>
             <li><a href="advanced.html">Advanced</a></li>
@@ -121,7 +122,7 @@
             </section>
         </section>
         <section>
-            <h4>Git LFS: Installation</h4>
+            <h4>Git LFS: Installation (CLI)</h4>
             <p class="common-text-justified">
                 <u>To apply Git LFS to distributed development, you will need a server that can handle it.</u>
                 <br><br>
@@ -150,6 +151,18 @@
             </p>
         </section>
         <section>
+            <h4>Git LFS: Installation (SourceTree)</h4>
+            <p class="common-text-justified">
+                Fortunately, Git LFS is bundled with SourceTree!
+                If you’ve installed SourceTree, Git LFS has been initialized and added to your local machine’s path.
+            </p>
+        </section>
+        <section>
+            <u><b>But wait – there’s more!</b></u>
+            <br>
+            If you plan to push updates to a server, you'll need to configure the server as well.
+        </section>
+        <section>
             <h4>Git LFS: Repository Configuration</h4>
             <div class="div-whole-of-parts">
                 <div style="width: 70%; height: inherit; float: left;">
@@ -158,18 +171,20 @@
                 </div>
                 <div style="width: 30%; height: inherit; float: left; padding: 70px 0;">
                     <p class="common-text-left">
-                        You will also need to update the settings of your repository on the server to allow for Git LFS.
+                        You will also need to update the settings of the applicable repositories on their respective
+                        servers to allow for Git LFS.
                     </p>
                     <p class="common-text-left" style="color: yellow;">
-                        NOTE: Applying Git LFS to existing repos will NOT retroactively apply to previous commits. This
-                        would
-                        require rewriting history.
+                        <u>Note</u>
+                        <br>
+                        Applying Git LFS to existing repos will NOT retroactively apply to previous commits. This
+                        would require rewriting history.
                     </p>
                 </div>
             </div>
         </section>
         <section>
-            <h4>Git LFS: Example Use Case</h4>
+            <h4>Git LFS: Example Use Case (CLI)</h4>
             <p class="common-text-justified">
                 If we wanted to track modern PowerPoint files, we can navigate to the directory of the repository and
                 type:
@@ -181,7 +196,8 @@
                 </code>
             </pre>
             <p class="common-text-justified" style="color: yellow;">
-                <b><u>The quotes here are important</u></b>, as they prevent the wildcard (*) from being expanded and creating
+                <b><u>The quotes here are important</u></b>, as they prevent the wildcard (*) from being expanded and
+                creating
                 individual entries for each *.pptx file in your current directory.
                 <br><br>
                 This will create (or update) a .gitattributes file, which binds tracked file patterns to the Git LFS
@@ -189,7 +205,7 @@
             </p>
         </section>
         <section>
-            <h4>Git LFS: Example Use Case</h4>
+            <h4>Git LFS: Example Use Case (CLI)</h4>
             <p class="common-text-center">
                 You can check what file patterns are monitored under Git LFS for a repository like so:
             </p>
@@ -201,6 +217,42 @@
                     Listing excluded patterns
                 </code>
             </pre>
+        </section>
+        <section>
+            <h4>Git LFS: Example Use Case (SourceTree)</h4>
+            <div class="div-whole-of-parts">
+                <div style="width: 30%; height: inherit; float: left; padding: 100px 0;">
+                    <p class="common-text-left">
+                        For SourceTree users, let's consider a repository that wants to track modern PowerPoint files.
+                        <br><br>
+                        First, initialize the repository<br>
+                        From the top menu, select:<br>
+                        Repository > Git LFS > Initialize Repository
+                    </p>
+                </div>
+                <div style="width: 70%; height: inherit; float: left;">
+                    <img src="img/binary-files/sourcetree/initialize-git-lfs.png" alt="Initialize Git LFS" width="70%">
+                    <img src="img/binary-files/sourcetree/start-git-lfs.png" alt="Start Using Git LFS" width="60%">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h4>Git LFS: Example Use Case (SourceTree)</h4>
+            <div class="div-whole-of-parts">
+                <div style="width: 30%; height: inherit; float: left; padding: 40px 0;">
+                    <p class="common-text-left">
+                        <u>Track Files</u><br>
+                        From the top menu, select:<br>
+                        Repository > Git LFS > Track / Untrack Files
+                        <br><br>
+                        This will create/update.gitattributeswhich binds tracked file patterns to the Git LFS filter.
+                        <u><b>This file needs to be added and committed to the repository!</b></u>
+                    </p>
+                </div>
+                <div style="width: 70%; height: inherit; float: left;">
+                    <img src="img/binary-files/sourcetree/track-files.png" alt="Configuring Git LFS on Server">
+                </div>
+            </div>
         </section>
         <section>
             <h4>Git LFS: Further Resources and Tutorials</h4>
@@ -239,6 +291,7 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
 
 
 
