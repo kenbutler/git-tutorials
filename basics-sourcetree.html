@@ -48,7 +48,7 @@
 <div id="content" class="reveal">
     <div class="slides">
         <section>
-            <h2>Basic Commands: SourceTree</h2>
+            <h3>Basic Commands: SourceTree</h3>
             <p class="common-text-justified">
                 This section aims to provide a solid foundation for the basic commands required to use Git.
                 To understand the applicability of the basic commands, this tutorial will follow a scenario.
@@ -58,7 +58,7 @@
                 bottom-right corner that controls navigation through the lesson.
             </p>
         </section>
-        <section>
+        <section data-transition="slide-in fade-out">
             <h4>Types of Repository Storage</h4>
             <p class="common-text-justified">
                 There are two ways a Git repository can be stored and managed:
@@ -67,21 +67,25 @@
             </p>
             <div class="div-whole-of-parts">
                 <div class="div-left-half">
-                    <img src="img/basics/local-computer.png" alt="Local Computer" width="70%" height="inherit">
+                    <a href="basics-sourcetree.html#/3">
+                        <img src="img/basics/local-computer.png" alt="Local Computer" width="70%" height="inherit">
+                    </a>
                     <p class="common-text-center">Local Computer</p>
                 </div>
                 <div class="div-right-half">
-                    <img src="img/basics/remote-server.png" alt="Remote Server" width="70%" height="inherit">
+                    <a href="basics-sourcetree.html#/25">
+                        <img src="img/basics/remote-server.png" alt="Remote Server" width="70%" height="inherit">
+                    </a>
                     <p class="common-text-center">Remote Server</p>
                 </div>
             </div>
         </section>
-        <section>
+        <section data-transition="fade-in slide-out">
             <img src="img/basics/local-computer.png" alt="Local Computer" width="40%" height="inherit">
             <br>
             Let's first consider local storage.
         </section>
-        <section>
+        <section data-transition="slide-in fade-out">
             <h4>Creating a Local Repository</h4>
             <p class="common-text-center">
                 To create a local repository using SourceTree, go to the "Local" tab and select<br>
@@ -89,7 +93,7 @@
             </p>
             <img src="img/basics/sourcetree/create-local-repo-1.png" alt="" width="80%" height="inherit">
         </section>
-        <section>
+        <section data-transition="fade-in slide-out">
             <h4>Creating a Local Repository</h4>
             <p class="common-text-center">
                 Specify the destination folder for the new repository.
@@ -101,63 +105,103 @@
                 This may require you create a directory, if one does not exist.
             </p>
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <h4>Creating a Local Repository</h4>
             <p class="common-text-center">
-                You can now see the new repository in the list. Double-click to view it.
+                You can now see the new repository in the list.
+                <br>
+                In SourceTree, you can double-click to view it.
             </p>
             <img src="img/basics/sourcetree/repo-list.png" alt="" width="40%" height="inherit">
         </section>
-        <section>
+        <section data-transition="fade-in slide-out">
             <h4>Viewing Local Repository</h4>
             <p class="common-text-center">
                 This is the initial view you will have of your empty repository.
                 <br>
                 Let’s start adding files!
             </p>
-            <img src="img/basics/sourcetree/view-repo.png" alt="" width="80%" height="inherit">
+            <img src="img/basics/sourcetree/view-repo.png" alt="Empty repository" width="80%" height="inherit">
         </section>
-        <section>
+        <section data-transition="slide-in fade-out">
             <h4>Adding a File</h4>
-            TODO
-        </section>
-        <section>
-            <h4>Viewing Local Changes</h4>
             <p class="common-text-center">
-                Here we've added a directory for software used in developing dummy droids for Jedi training.
-                <br>
+                To add a file, you’ll need to open either a Finder (Mac) or Explorer (Windows) window or use the command
+                line to create a file. <u>Creating files is NOT done in SourceTree.</u>
+                <br><br>
+                Let’s add some fake files as an example.
+            </p>
+            <div class="div-whole-of-parts">
+                <div style="float: left; width: 70%;">
+                    <img src="img/basics/sourcetree/view-repo.png" alt="Empty repository" width="100%">
+                </div>
+                <div style="float: left; width: 30%;">
+                    <img src="img/basics/sourcetree/add-file.png" alt="Adding a file" width="100%">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Viewing Local Changes</h4>
+            <p class="common-text-justified">
+                Here we've added a directory ("droid") for software used in developing dummy droids for Jedi training.
                 Inside the directory is a file and a subdirectory with a file.
-                <br>
+            </p>
+            <p class="common-text-center">
                 Let’s analyze the relevant new pieces here.
             </p>
-            <img src="img/basics/sourcetree/view-local-changes.png" alt="" width="80%" height="inherit">
+            <img src="img/basics/sourcetree/view-local-changes.png" alt="Local changes" width="80%" height="inherit">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
-            TODO
+            <p class="common-text-center">
+                In the upper left, we can see that the “Commit” button has the number ”2” above it.
+                <br>
+                This is because SourceTree sees two new files.
+            </p>
+            <div class="div-whole-of-parts">
+                <div style="float: left; width: 30%;">
+                    <img src="img/basics/sourcetree/num-changes-since-last-commit.png" alt="Adding a file" width="100%">
+                </div>
+                <div style="float: left; width: 70%;">
+                    <img src="img/basics/sourcetree/view-local-changes.png" alt="Local changes" width="100%">
+                </div>
+            </div>
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
-            TODO
+            <p class="common-text-center">
+                We can also see the files that have been added or changed.
+            </p>
+            <img src="img/basics/sourcetree/view-files-changed.png" alt="Local changes" width="100%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
-            TODO
+            <p class="common-text-center">
+                For each file we can view the files contents.
+            </p>
+            <img src="img/basics/sourcetree/view-file-contents.png" alt="File contents" width="100%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
-            TODO
+            <p class="common-text-justified">
+                To understand a little better the process of committing new files in Git, let’s first change the view of
+                the pending files. Select the four horizontal bars, as shown here. Currently we have ”No staging”
+                selected. Let’s select “Split view staging”.
+            </p>
+            <img src="img/basics/sourcetree/change-view-of-pending-files.png" alt="Changing view of pending files"
+                 width="80%">
         </section>
-        <section>
+        <section data-transition="fade-in slide-out">
             <h4>Viewing Local Changes</h4>
             <p class="common-text-center">
                 This configuration helps us see which files are <u>staged for commit</u>.
-                <br><br>
+                <br>
                 Let's talk about what "staging" means! Click the right arrow.
             </p>
-            <img src="img/basics/sourcetree/changed-view-of-pending.png" alt="" width="80%" height="inherit">
+            <img src="img/basics/sourcetree/changed-view-of-pending.png" alt="Changing view of pending files"
+                 width="80%" height="inherit">
         </section>
-        <section>
+        <section data-transition="slide-in fade-out">
             <h4>Staging Changes</h4>
             <p class="common-text-center">
                 <b><u>Staging</u></b> refers to a state between making changes and committing them to a repository.
@@ -176,6 +220,121 @@
                 and is covered in more advanced topics.)
             </p>
         </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Staging Files</h4>
+            <p class="common-text-justified">
+                To stage the files we’ve added to the repository, you can either drag-and-drop the files from the
+                “Unstaged files” section to the “Staged files” section or select the checkboxes next to the files
+                themselves.
+            </p>
+            <img src="img/basics/sourcetree/staging-files.png" alt="Staging files" width="80%" height="inherit">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Staging Files</h4>
+            <p class="common-text-justified">
+                Here we can see the newly staged files. You may notice that their icons have changed. Previously the
+                icon was a question mark, indicating it was an untracked file. Here it is a plus sign, indicating it is
+                a newly-added file.
+            </p>
+            <img src="img/basics/sourcetree/staged-files.png" alt="Staged files" width="80%" height="inherit">
+        </section>
+        <section>
+            <h4>SourceTree Icon Cheat Sheet</h4>
+            <p class="common-text-center">
+                This is a cheat sheet for SourceTree icon definitions.
+            </p>
+            <img src="img/basics/sourcetree/sourcetree-icon-cheatsheet.png" alt="SourceTree icon cheatsheet"
+                 width="40%" height="inherit">
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Committing Changes</h4>
+            <p class="common-text-center">
+                Now that we've staged the files we want to commit, select the "Commit" button.
+            </p>
+            <div class="div-whole-of-parts">
+                <div style="float: left; width: 30%;">
+                    <img src="img/basics/sourcetree/num-changes-since-last-commit.png" alt="Adding a file" width="100%">
+                </div>
+                <div style="float: left; width: 70%;">
+                    <img src="img/basics/sourcetree/staged-files.png" alt="Staged files" width="100%" height="inherit">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Committing Changes</h4>
+            <p class="common-text-center">
+                Now that we’ve selected “Commit”, we must add a message to describe the changes.
+            </p>
+            <img src="img/basics/sourcetree/commit-message.png" alt="Adding a commit message"
+                 width="80%" height="inherit">
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Committing Changes</h4>
+            <p class="common-text-center">
+                <u>Following Good Practices</u>
+            </p>
+            <p class="common-text-justified" style="color: yellow;">
+                It is good practice to provide a descriptive message, even if it just describes the files you added.
+                If there was a purpose to a file change or addition, it’s good to put that in there too. Do <u>NOT</u>
+                simply type “Nothing” as the commit message. This is <u>NOT</u> useful to other team members, as they
+                cannot determine the general changes you made by viewing the commit message.
+            </p>
+            <p class="common-text-center">
+                <u>Be a good developer and communicate the intent of your work.</u>
+            </p>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Committing Changes</h4>
+            <p class="common-text-center">
+                Now that we’ve added a message and hit “Commit”, we see this screen.
+                <br>
+                <u>What is this screen telling us?</u>
+                <br>
+                It is telling us that there have been no changes to our repository since the last commit we made.
+                <br>
+                Let’s view the history of the commits now. Select the “History” item under “Workspace”
+            </p>
+            <img src="img/basics/sourcetree/nothing-to-commit.png" alt="No changes to commit"
+                 width="80%" height="inherit">
+        </section>
+        <section data-transition="slide-in slide-out">
+            <h4>Viewing Commit History</h4>
+            <p class="common-text-center">
+                Here we can see the commit history of our repo. Notice the most recent commit we just made.
+            </p>
+            <img src="img/basics/sourcetree/commit-history.png" alt="Commit history" width="80%" height="inherit">
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Resetting Changes</h4>
+            <p class="common-text-justified">
+                <u>Now let’s talk about resetting changes.</u>
+                Here we have modified the <b>logic.py</b> file.
+                We can see the details of the change on the right-hand side.
+                The lines in <span style="color: red;">red</span> represent the <span style="color: red;">old</span>
+                lines, whereas the lines in <span style="color: lime;">green</span> represent the
+                <span style="color: lime;">new</span> lines. We can also see the change in icon to a gold ellipsis.
+            </p>
+            <img src="img/basics/sourcetree/resetting-changes-1.png" alt="Resetting changes"
+                 width="70%" height="inherit">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Resetting Changes</h4>
+            <p class="common-text-justified">
+                To reset the changes made to this file, right-click on the file within SourceTree and select “Reset…”.
+                Note that we also see “Reset to Commit…”. This latter option is only useful if we want to reset the file
+                to some commit further back in history, not immediately previous to your current state.
+                You will likely receive a prompt asking you if you are sure you want to do this. If you are,
+                select "Yes."
+                In this case, you'll return to the empty <b>File Status</b> screen.
+            </p>
+            <img src="img/basics/sourcetree/resetting-changes-2.png" alt="Resetting changes"
+                 width="60%" height="inherit">
+        </section>
+        <section>
+            <img src="img/basics/remote-server.png" alt="Remote Server" width="40%" height="inherit">
+            <br>
+            Let's now consider working with a remote server.
+        </section>
     </div>
 </div>
 
@@ -193,9 +352,6 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
-
-
-
 
 
 
