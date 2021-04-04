@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Git Tutorials | Basics - CLI</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <!-- Icon -->
+    <link rel="icon" href="img/icon/git.ico">
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript">ddlevelsmenu.setup("ddtopmenubar", "topbar")</script>
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="nav" class="ddsmoothmenu">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="team_workflow.html">Workflow</a></li>
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="security_protocol.html">Security Protocol</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="basic_commands.html" style="color:white; background-color:#1A1A1A">Basics</a></li>
+            <li><a href="merge_conflicts.html">Merge Conflicts</a></li>
+            <li><a href="binary_files.html">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
+            <li><a href="help.html">Help!</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <br style="clear: left"/>
+    </div>
+</div>
+<!-- Content -->
+<div id="content" class="reveal">
+    <div class="slides">
+        <section>
+            <h3>Basic Commands</h3>
+            <h4>Command Line Interface</h4>
+            <p class="common-text-justified">
+                This section aims to provide a solid foundation for the basic commands required to use Git.
+                To understand the applicability of the basic commands, this tutorial will follow a scenario.
+            </p>
+            <p class="common-text-justified" style="color: yellow;">
+                You may press ESC at any point to view an overview of the tutorial. Note the arrow(s) in the
+                bottom-right corner that controls navigation through the lesson.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Types of Repository Storage</h4>
+            <p class="common-text-justified">
+                There are two ways a Git repository can be stored and managed:
+                locally on a personal computer or remotely on a server. Storing remotely permits distributed teamwork.
+                It is worth noting that a locally stored repository can be moved to a server if desired.
+            </p>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <a href="basics-cli.html#/3">
+                        <img src="img/basics/local-computer.png" alt="Local Computer" width="70%" height="inherit">
+                    </a>
+                    <p class="common-text-center">Local Computer</p>
+                </div>
+                <div class="div-right-half">
+                    <a href="basics-cli.html#/25">  <!-- FIXME: Check link -->
+                        <img src="img/basics/remote-server.png" alt="Remote Server" width="70%" height="inherit">
+                    </a>
+                    <p class="common-text-center">Remote Server</p>
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <img src="img/basics/local-computer.png" alt="Local Computer" width="40%" height="inherit">
+            <br>
+            Let's first consider local storage.
+        </section>
+        <section data-transition="slide-in fade-out">
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+                Here we create a new directory called <span class="code">droid</span> aimed at software for battle droid
+                development.
+
+                After making the directory, we navigate into it. Using the <span class="code">ls</span> command,
+                we see the directory is empty.
+                Since we already have Git installed, we can run the command <span class="code">git init</span>
+                to start a local repository in the current directory.
+                We see this present the message:
+                <span class="code">Initialized empty Git repository in current directory</span>
+
+                If we examine the directories contents now, showing all hidden files using
+                <span class="code">ls -a</span>,
+                we see that a <span class="code">.git</span> directory has been added.
+                This is a directory added by Git to allow for version control.
+                The details of this directory are NOT covered in this tutorial set.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ mkdir droid
+                    $ cd droid
+                    $ git init
+                    Initialized empty Git repository in /Users/kenbutler/droid/.git/
+                    $ ls -a
+                    .    ..    .git
+                </code>
+            </pre>
+        </section>
+        <section data-transition="fade-in silde-up">
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+                Next we add an empty <span class="code">.gitignore</span> file using the
+                <span class="code">touch</span> command.
+                The .gitignore file essentially tells Git what files to ignore in the repository.
+                The .gitignore file will be covered later in this lesson.
+                <u>It is always good practice to add a .gitignore file at the beginning of a repository.</u>
+                <br><br>
+                We then add the .gitignore file to the repository and commit it with a detailed message.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ touch .gitignore
+                    $ git add .gitignore
+                    $ git commit -m "Initial commit of Droid repository"
+                    [master (root-commit) 3b946c4] Initial commit of Droid repository
+                     1 file changed, 0 insertions(+), 0 deletions(-)
+                     create mode 100644 .gitignore
+                </code>
+            </pre>
+        </section>
+        <section data-transition="slide-up fade-out">
+            <section>
+                <p class="code-title">git init</p>
+                <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ touch .gitignore
+                    $ git add .gitignore
+                    $ git commit -m "Initial commit of Droid repository"
+                    [master (root-commit) 3b946c4] Initial commit of Droid repository
+                     1 file changed, 0 insertions(+), 0 deletions(-)
+                     create mode 100644 .gitignore
+                </code>
+                </pre>
+                <p class="common-text-left">
+                    Git's response to this particular commit shows us that:
+                </p>
+                <ul class="common-text-left">
+                    <li>This is the root commit of the repository - <span class="code">(root-commit)</span></li>
+                    <li>
+                        This commit was made on the master branch with a identifier (SHA) of
+                        <span class="code">3b946c4</span>
+                    </li>
+                    <li>1 file was changed (added), in this case it was <span class="code">.gitignore</span></li>
+                    <li>
+                        The creation mode of the added file was <span class="code">100644</span>.
+                        The <span class="code">create mode</span> is an octal representation of the file mode.
+                        (Click the <u>down arrow</u> to understand the various types of creation modes.)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h4>Git Create Modes</h4>
+                <table class="common-text-justified">
+                    <tr>
+                        <td><b>Octal Value</b></td>
+                        <td><b>Mode</b></td>
+                    </tr>
+                    <tr>
+                        <td>040000</td>
+                        <td>Directory</td>
+                    </tr>
+                    <tr>
+                        <td>100644</td>
+                        <td>Regular, non-executable file</td>
+                    </tr>
+                    <tr>
+                        <td>100664</td>
+                        <td>Regular, non-executable, group-writeable file</td>
+                    </tr>
+                    <tr>
+                        <td>100755</td>
+                        <td>Regular executable file</td>
+                    </tr>
+                    <tr>
+                        <td>120000</td>
+                        <td>Symlink</td>
+                    </tr>
+                    <tr>
+                        <td>160000</td>
+                        <td>Gitlink</td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+        <section>
+            <section>
+                <p class="code-title">git log</p>
+                <p class="common-text-justified">
+                    Now that we made an initial commitment to the Git repository, we can view a log history of the
+                    repository.
+                </p>
+                <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ git log
+                    commit b0737f0a59e7e14f533488671cbd7b80b225eaaf ()
+                    Author: Obi-Wan &lt;Obi-Wan.Kenobi@gmail.com&gt;
+                    Date:   Thu Apr 25 09:55:36 2019 -0400
+
+                    Initial commit of droid repository
+                </code>
+            </pre>
+                <p class="common-text-justified">
+                    This repository only has one commit so far, so we only see one. Above we can see the complete,
+                    40-character SHA-1 checksum hash. You can see the author of the commit (assuming they have properly
+                    set up their .gitconfig file in their home directory), the datetime at which the commit was made,
+                    and the message assigned to the commit (if one exists).
+                    <br>
+                    <span style="color:yellow;">
+                        Click the <u>down arrow</u> to view other strategies for viewing logs.
+                    </span>
+                </p>
+            </section>
+            <section>
+                <h4>Formatting Git Logs</h4>
+                <p class="common-text-justified">
+                    Git logs can be useful in determining the history of commits, including what files changed, who
+                    changed them, and why. A number of formatting flags can be used. The short table below shows some
+                    useful flags, but the entirety of the flags can be found using the link.
+                </p>
+                <table class="common-text-left">
+                    <tr>
+                        <td><b>Flag</b></td>
+                        <td><b>Intent</b></td>
+                    </tr>
+                    <tr>
+                        <td>--name-status</td>
+                        <td>Shows the names and statuses of files changed</td>
+                    </tr>
+                    <tr>
+                        <td>--graph</td>
+                        <td>Draw a text-based graphical representation of the commit history</td>
+                    </tr>
+                    <tr>
+                        <td>--abbrev-commit</td>
+                        <td>Shorten the commit's SHA</td>
+                    </tr>
+                    <tr>
+                        <td>--pretty=oneline</td>
+                        <td>Condense the log message down to a single line</td>
+                    </tr>
+                </table>
+                <p class="common-text-center">
+                    <a href="https://git-scm.com/docs/git-log" target="_blank">
+                        Click here for a complete list of flags
+                    </a>
+                </p>
+            </section>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <p class="code-title">git status</p>
+            <p class="common-text-justified">
+                Let’s create some new files and a directory. Here we create a logic file for the overall droid system.
+                We also create a directory for communication systems of the droid, in which we will place a translator
+                file to translate speech input.
+                <br><br>
+                Using <span class="code">git status</span>, we can see what files Git see have changed or been added.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ touch logic.py; mkdir comm_system; touch comm_system/translator.py
+                    $ git status
+                    On branch master
+                    Untracked files:
+                       (use "git add &lt;file&gt;..." to include in what will be committed)
+
+                        comm_system/
+                        logic.py
+
+                    nothing added to commit but untracked files present (use "git add" to track)
+                </code>
+            </pre>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <p class="code-title">git status</p>
+            <p class="common-text-justified">
+                Consider this segment from the <span class="code">git status</span> message.
+                It indicates that these files have not yet been staged.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    nothing added to commit but untracked files present (use "git add" to track)
+                </code>
+            </pre>
+            <p class="common-text-justified">
+                Git staging is the intermediary step between modifying files and committing them.
+                The "stage" stores information about what will go into the next commit.
+            </p>
+            <p class="common-text-center">
+                Let’s stage these files using <span class="code">git add</span>
+            </p>
+        </section>
+        <section>
+            <section>
+                <p class="code-title">git add</p>
+                <p class="common-text-justified">
+                    To stage files, we use the <span class="code">git add</span> command.
+                    In this instance, we added all files in and under the
+                    current directory using the command: <span class="code">git add .</span>
+                    <br><br>
+                    After adding these files to the Git staging area, we can see with <span
+                        class="code">git status</span>
+                    that these files are now considered “Changes to be committed” and are highlighted in
+                    <span style="color: lime;">green</span>.
+                </p>
+                <pre>
+                    <code class="bash" data-trim style="font-size: 18px; color: lime">
+                        $ git add .
+                        $ git status
+                        On branch master
+                        Changes to be committed:
+                          (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+                                new file: comm_system/translator.py
+                                new file: logic.py
+                    </code>
+                </pre>
+                <p class="common-text-center">
+                    Select the <u>down arrow</u> for various formats for adding files using
+                    <span class="code">git add</span>
+                </p>
+            </section>
+            <section>
+                <h4>Formats for Adding Files</h4>
+                <p class="common-text-left">
+                    The <span class="code">git add</span> command can stage files and directories in a number of ways.
+                    The table below provides a few relevant examples.
+                </p>
+                <table class="common-text-left">
+                    <tr>
+                        <td class="code">git add .</td>
+                        <td>Stages files under the current directory</td>
+                    </tr>
+                    <tr>
+                        <td class="code">git add &lt;file1&gt; &lt;file2&gt; ... &lt;fileN&gt;</td>
+                        <td>Stage specific files</td>
+                    </tr>
+                    <tr>
+                        <td class="code">git add &lt;dir1&gt; &lt;dir2&gt; ... &lt;dirN&gt;</td>
+                        <td>Stage specific directories</td>
+                    </tr>
+                    <tr>
+                        <td class="code">git add &lt;file1&gt; &lt;file1&gt; &lt;dir1&gt;</td>
+                        <td>Stage both specific files and directories</td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+        <section>
+            <p class="code-title">git commit</p>
+            <p class="common-text-justified">
+                We’re ready to commit these changes, so let’s do so. We use the git commit command to commit all the
+                staged files. It is very good practice to use the <span class="code">–m</span> flag with
+                <span class="code">git commit</span> to include a brief message detailing the purpose or summary of the
+                commitment.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ git commit -m "Add comm_system directory and logic file"
+                    [master 5c8cdeb] Add comm_system directory and logic file
+                     2 files changes, 2 insertions (+)
+                     create mode 100644 comm_system/translator.py
+                     create mode 100644 logic.py
+                </code>
+            </pre>
+            <p class="common-text-justified">
+                Checking the status of the repository again, we see that the tree is in a <u>clean state</u>.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ git status
+                    On branch master
+                    nothing to commit, working tree clean
+                </code>
+            </pre>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <p class="code-title">git diff</p>
+            <p class="common-text-justified">
+                Another important feature of Git is it’s ability to show the changes within files since the last commit.
+                We have already seen the list of files added or modified using <span class="code">git status</span>,
+                but we can view the specific changes using the <span class="code">git diff</span> command.
+                <br><br>
+                In this example, we have created a new, empty directory called <span class="code">power</span>.
+                We have also made a modification to the logic file.
+                Running <span class="code">git status</span> only shows the modifications to the logic file –
+                <u>why?</u>
+                Git only recognizes directories if they are <u>NOT</u> empty.
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ mkdir power
+                    $ git status
+                    On branch master
+                    Changes not staged for commit:
+                       (use "git add &lt;file&gt;..." to include in what will be committed)
+                       (use "git checkout -- &lt;file&gt;..." to discard changes in the working directory)
+
+                            modified: logic.py
+
+                    no changes added to commit (use "git add" and/or "git commit -a")
+                </code>
+            </pre>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <p class="code-title">git diff</p>
+            <p class="common-text-justified">
+                Here we have run <span class="code">git diff</span>.
+                Since we have only changed a single line of a single file, the result of this diff is rather simple,
+                but it does a good job at illustrating the purpose of <span class="code">git diff</span>.
+            </p>
+            <pre>  <!-- FIXME: The colors aren't working out here...review ENTIRE slide -->
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    $ git diff
+                    diff --git a/logic.py b/logic.py
+                    index a7c5871..41410bc 100644
+                    --- a/logic.py
+                    +++ b/logic.py
+                    @@ -1 +1 @@
+                    -# This file accounts for sensory logic of the droid.
+                    +# This file accounts for decision logic of the droid.
+                </code>
+            </pre>
+            <p class="common-text-justified">
+                The response contains details such as the file that was changed and the exact lines that were changed.
+                As expected, we see the changed file is logic.py.
+                The already-committed version of the file is donated by three dashes (---).
+                The modified file is denoted by three plus signs (+++).
+                The modified or added lines are shown in green, whereas the previous lines are shown in red.
+            </p>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+
+
+        <!-- Extras -->
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+
+
+
+
+
+</script>
+</body>
+</html>
