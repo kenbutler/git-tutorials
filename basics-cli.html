@@ -475,7 +475,7 @@
             </table>
             <p class="common-text-center" style="color: yellow;">
                 These Git commands above are relevant to projects that have network connectivity.
-                While some of these, such as branch and checkout can be used without network connectivity,
+                While some of these, such as branch and checkout, can be used without network connectivity,
                 they’re most-applicable to projects that are hosted on a server.
             </p>
             <p class="common-text-center">
@@ -492,9 +492,305 @@
             such as SSH, GPB, or HTTPS. Visit the <a href="security_protocol.html" target="_blank">Security Protocol</a>
             section to learn more before you proceed!<br>(Link opens in new page)
         </section>
+        <section>
+            <p class="code-title">git clone</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <b>A Common Cloning Issue</b><br>
+            <img src="img/basics/cli/common-cloning-issue.png" alt="Common cloning issue" width="100%">
+            <p class="common-text-center">
+                <u><b>Problem Analysis</b></u>
+            </p>
+            <ol class="common-text-left">
+                <li>
+                    <b style="color: yellow;">Are you connected to the internet?</b><br>
+                    The error above was triggered by disconnecting from the Internet
+                </li>
+                <li>
+                    <b style="color: yellow;">
+                        Do you need to be connected to your organization's VPN? If so, are you?
+                    </b>
+                </li>
+                <li>
+                    <b style="color: yellow;">Can you view the repository on the server / from a browser?</b><br>
+                    <ol>
+                        <li>
+                            If so, then ensure you've configured your
+                            <a href="" target="_blank">security protocol</a>.
+                        </li>
+                        <li>
+                            If not, then you likely do not have access to the repository.
+                            You may need to contact your organization's admins about this.
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <p class="code-title">git branch</p>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-justified">
+                        Git repositories are intended to be shaped like trees.
+                        The command <span class="code">git branch</span> allows you to see the current branches
+                        of the repository.
+                        If you include the <span class="code">–a</span> flag,
+                        both local and remote branches will be shown.
+                        <br><br>
+                        The branch you are currently on is denoted with an asterisk.
+                        <span style="color: lime;">Local</span> branches are shown in
+                        <span style="color: lime;">green</span>.
+                        <span style="color: red;">Remote</span> branches are shown in
+                        <span style="color: red;">red</span> and are pre-pended with the notation:
+                        <span style="color: red;">remotes/origin/</span>.
+                        This notation indicates where the branch is at on the server.
+                        Without getting too deep, a repository can exist on multiple servers,
+                        so there could be multiple "remotes" listed here.
+                        This is a very uncommon situation though.
+                    </p>
+                </div>
+                <div class="div-right-half" style="padding-left: 20px; padding-top: 20px;">
+                    <img src="img/basics/cli/git-branch.png" alt="git branch example" width="100%">
+                    <br><br>
+                    <table class="common-text-left">
+                        <tr>
+                            <td class="code" width="50%">git branch</td>
+                            <td>View all <span style="color: lime;">local</span> branches</td>
+                        </tr>
+                        <tr>
+                            <td class="code">git branch -a</td>
+                            <td>
+                                View all <span style="color: lime;">local</span>
+                                and <span style="color: red;">remote</span> branches
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p class="code-title">git checkout</p>
+            <p class="common-text-justified">
+                The command <span class="code">git checkout</span> allows a user to switch between branches.
+                It can also be used to create a new branch.
+            </p>
+            <p class="code">
+                git checkout &lt;branch-name&gt;
+            </p>
+            <p class="common-text-center">
+                to switch between existing branches
+            </p>
+            <br>
+            <p class="code">
+                git checkout -b &lt;new-branch-name&gt;
+            </p>
+            <p class="common-text-center">
+                to both create a new branch (based off your latest commit) and switch to it
+            </p>
+        </section>
+        <section>
+            <p class="code-title">git checkout</p>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half" style="padding: 40px 0;">
+                    <p class="common-text-justified">
+                        In this example, we are starting with only the <span class="code">master</span> branch.
+                        If a user was only developing by him/herself, then developing on
+                        <span class="code">master</span> may be okay, but it’s certainly not acceptable when
+                        working with a team.
+                        Given this, it is common to have a <span class="code">development</span> branch
+                        and individual dev branches for each team member.
+                        <br><br>
+                        Let’s first create a <span class="code">development</span> branch
+                        and then create an individual developer branch (<span class="code">dev_obiwan</span>).
+                        You can then use <span class="code">git checkout</span> to switch between branches.
+                        Again though, it is common to develop on your own, individual branch.
+                    </p>
+                </div>
+                <div class="div-right-half">
+                    <img src="img/basics/cli/git-checkout.png" alt="git checkout example" width="100%">
+                </div>
+            </div>
+        </section>
+        <section>
+            <p class="code-title">git push</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git push</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git push</p>
+            When a push fails...
+            <p class="common-text-justified">
+                Occasionally the server may reject your push.
+                <u>
+                    This usually occurs when you need to pull updates from the server before pushing updates from
+                    your local branch.
+                </u>
+            </p>
+            <img src="img/basics/cli/git-push-fail.png" alt="git push failure" width="60%">
+            <p class="common-text-justified">
+                Note the hints that Git is trying to give you:<br>
+                "Updates were rejected because the remote contains work that you do not have locally...<br>
+                You may first want to integrate the remote changes before pushing again."<br>
+                <u>To resolve this, we’ll need to pull updates first</u>.
+            </p>
+        </section>
+        <section>
+            <p class="code-title">git fetch</p>
+            <p class="common-text-left">
+                <span class="code">git fetch</span>
+                downloads new data from the repository on the server,
+                but it does <b><u>NOT</u></b> integrate this data into your local branches
+            </p>
+            <img src="img/basics/cli/git-fetch.png" alt="git fetch example" width="60%">
+            <p class="common-text-center">
+                In this example, <span class="code">dev_obiwan</span> had an update on the server.
+            </p>
+        </section>
+        <section>
+            <p class="code-title">git merge</p>
+            <p class="code">
+                git merge &lt;branch-name&gt;
+            </p>
+            <img src="img/basics/cli/git-merge.png" alt="git merge example" width="60%">
+            <p class="common-text-justified">
+                If you want to pull from the server, you must include the server name in the branch specification.
+                For example:
+            </p>
+            <p class="code">
+                git merge remotes/origin/branch_name_here
+            </p>
+            <p class="common-text-justified">
+                If you are pulling from a local branch, you do NOT need to add the server information.
+                For example:
+            </p>
+            <p class="code">
+                git merge branch_name_here
+            </p>
+            <p class="common-text-center">
+                <a href="merge-conflicts-cli.html" target="_blank">
+                    Merge conflicts may arise. Click here to understand how to resolve them.
+                </a>
+            </p>
+        </section>
+        <section>
+            <p class="code-title">git pull</p>
+            <p class="code">
+                git pull &lt;server-reference&gt; &lt;branch-name&gt;
+            </p>
+            <img src="img/basics/cli/git-pull.png" alt="git pull example" width="80%">
+            <p class="common-text-left">
+                <span class="code">git pull</span>
+                downloads and integrates data from the specified branch on the remote repository into your local branch.
+                It is typically used to either:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;A.) Update the branch you’re currently on, or<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;B.) Pull in changes from another branch
+            </p>
+        </section>
+        <section>
+            <b><span style="">git fetch</span> vs. <span style="">git pull</span></b>
+            <p class="common-text-center">
+                In Git, a pull essentially a fetch followed by a merge.
+            </p>
+            <p class="code">
+                git pull = git fetch + git merge
+            </p>
+            <p class="common-text-center">
+                <a href="https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull"
+                   target="_blank">Click here for a more detailed explanation</a>
+                <br>
+                (link opens in new tab)
+            </p>
+            <p class="common-text-center">
+                There can be conflicts introduced when performed git pull,
+                <b>specifically if the updates from the server fail to merge smoothly with your local branch</b>.
+                <br>
+                <a href="merge-conflicts-cli.html" target="_blank">Conflict resolution is covered here</a>
+                (link opens in new tab)
+            </p>
+        </section>
 
 
         <!-- Extras -->
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
+        <section>
+            <p class="code-title">git init</p>
+            <p class="common-text-justified">
+
+            </p>
+            <pre>
+                <code class="bash" data-trim style="font-size: 18px; color: lime">
+                    TODO
+                </code>
+            </pre>
+        </section>
         <section>
             <p class="code-title">git init</p>
             <p class="common-text-justified">
