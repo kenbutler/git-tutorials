@@ -244,18 +244,18 @@
         <section data-transition="fade-in slide-out">
             <p class="code-title">git status</p>
             <p class="common-text-justified">
-                Consider this segment from the <span class="code">git status</span> message.
+                Consider the following segment from the <span class="code">git status</span> message.
                 It indicates that these files have not yet been staged.
             </p>
             <p class="code">
                 nothing added to commit but untracked files present (use "git add" to track)
             </p>
+            <p class="common-text-center">
+                Let’s stage these files using <span class="code">git add</span>
+            </p>
             <p class="common-text-justified">
                 Git staging is the intermediary step between modifying files and committing them.
                 The "stage" stores information about what will go into the next commit.
-            </p>
-            <p class="common-text-center">
-                Let’s stage these files using <span class="code">git add</span>
             </p>
         </section>
         <section>
@@ -306,15 +306,16 @@
         <section>
             <p class="code-title">git commit</p>
             <p class="common-text-justified">
-                We’re ready to commit these changes, so let’s do so. We use the git commit command to commit all the
-                staged files. It is very good practice to use the <span class="code">–m</span> flag with
+                We’re ready to commit these changes, so let’s do so. We use the <span class="code">git commit</span>
+                command to commit all the staged files.
+                It is very good practice to use the <span class="code">–m</span> flag with
                 <span class="code">git commit</span> to include a brief message detailing the purpose or summary of the
                 commitment.
-                <br><br>
-                Checking the status of the repository again, we see that the tree is in a <u>clean state</u>.
             </p>
             <img src="img/basics/cli/git-commit.png" alt="git commit example" width="100%">
-            </pre>
+            <p class="common-text-left">
+                Checking the status of the repository again, we see that the tree is in a <u>clean state</u>.
+            </p>
         </section>
         <section data-transition="slide-in fade-out">
             <p class="code-title">git diff</p>
@@ -327,7 +328,7 @@
                 We have also made a modification to the logic file.
                 Running <span class="code">git status</span> only shows the modifications to the logic file –
                 <u>why?</u>
-                Git only recognizes directories if they are <u>NOT</u> empty.
+                Because Git only recognizes directories if they are <u>NOT</u> empty.
             </p>
             <img src="img/basics/cli/git-diff-1.png" alt="git diff example" width="100%">
         </section>
@@ -340,11 +341,11 @@
             </p>
             <img src="img/basics/cli/git-diff-2.png" alt="git diff example" width="100%">
             <p class="common-text-justified">
-                The response contains details such as the file that was changed and the exact lines that were changed.
-                As expected, we see the changed file is logic.py.
+                The response contains details such as the file and exact lines that were changed.
+                As expected, we see the changed file is <span class="code">logic.py</span>.
                 The already-committed version of the file is donated by three dashes
                 (<span style="color:red;">---</span>).
-                The modified file is denoted by three plus signs (<span style="color:lime;">+++</span>).
+                Modifications are denoted by three plus signs (<span style="color:lime;">+++</span>).
                 The <span style="color:lime;">modified or added</span> lines are shown in
                 <span style="color:lime;">green</span>, whereas the <span style="color:red;">previous</span> lines
                 are shown in <span style="color:red;">red</span>.
@@ -367,9 +368,11 @@
             <p class="code-title">git reset</p>
             <p class="common-text-justified">
                 We can unstage a file, directory or multiple of both using the command:
-                <br>
+            </p>
+            <p class="code">
                 <span class="code">git reset HEAD &lt;files or directories&gt;</span>
-                <br>
+            </p>
+            <p class="common-text-justified">
                 The term <span class="code">HEAD</span> is a reference to the last commit of the currently
                 checked-out branch.
                 <br>
@@ -398,15 +401,18 @@
             </p>
         </section>
         <section data-transition="fade-in slide-out">
-            <p class="code-title">git checkout -- &lt;file&gt;</p>
+            <p class="code-title">git checkout -- &lt;filepath(s)&gt;</p>
             <b>A Reset Alternative</b>
             <p class="common-text-justified">
                 This command will erase any changes you have made to the specified file (or files, if a directory is
                 specified) and checkout the most recent version of the file or files.
                 <br><br>
-                <span class="code">git reset</span> updates the staging area, whereas
+                <span class="code">git reset</span> updates the staging area but does not undo changes, whereas
                 <br>
-                <span class="code">git checkout --</span> updates the working directory.
+                <span class="code">git checkout -- &lt;filepath(s)&gt;</span>
+                reverts files to their last committed states.
+                <br>
+                <span class="code">git checkout -- .</span> will revert all changes under the current directory
                 <br><br>
                 <span class="code">git checkout</span> (without the ”--”) is also used to switch between branches.
             </p>
@@ -421,7 +427,8 @@
             <img src="img/basics/cli/git-remove.png" alt="git remove example" width="50%">
             <p class="common-text-justified">
                 In the example above, we remove the logic file using <span class="code">git rm</span>.
-                Notice that both Git and the computer system realize the file logic.py has been deleted.
+                Notice that both Git and the computer system realize the file <span class="code">logic.py</span>
+                has been deleted.
                 This deletion can be reverted by using <span class="code">git reset --hard HEAD</span>,
                 but of course this should be used with caution, as previously mentioned.
             </p>
@@ -452,6 +459,8 @@
                 We’ve covered a number of useful Git commands.
                 <br>
                 <u>What else is there though?</u>
+                <br>
+                (Click the right arrow to find out...)
             </p>
         </section>
         <section>
@@ -474,7 +483,7 @@
                 </tr>
             </table>
             <p class="common-text-center" style="color: yellow;">
-                These Git commands above are relevant to projects that have network connectivity.
+                The Git commands above are relevant to projects that have network connectivity.
                 While some of these, such as branch and checkout, can be used without network connectivity,
                 they’re most-applicable to projects that are hosted on a server.
             </p>
@@ -494,18 +503,33 @@
         </section>
         <section>
             <p class="code-title">git clone</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-justified">
+                        To allow your team to work distributedly, you'll need to create a project space on a server.
+                        Once you've created the space, developers need to clone down the repository.
+                        Cloning essentially means copying down a reference of the repository.
+                        When a repository is cloned down, it includes a .git/ directory, which applies version control
+                        tracking.
+                        To clone from a server, you must first have a server established.
+                        The example here shows a JEDI project that was created on a Bitbucket server.
+                        Bitbucket, as well as other common servers, will include URLs for cloning.
+                        We would use the URL in tandem with <span class="code">git clone</span> to clone down the
+                        repository.
+                    </p>
+                </div>
+                <div class="div-right-half">
+                    <img src="img/basics/cli/git-clone-1.png" alt="git clone example" width="100%">
+                    <img src="img/basics/cli/git-clone-2.png" alt="git clone example" width="100%">
+                </div>
+            </div>
         </section>
         <section>
             <b>A Common Cloning Issue</b><br>
-            <img src="img/basics/cli/common-cloning-issue.png" alt="Common cloning issue" width="100%">
+            <p class="common-text-center">
+                When cloning, you may run into an issue such as this:
+            </p>
+            <img src="img/basics/cli/common-cloning-issue.png" alt="Common cloning issue" width="80%">
             <p class="common-text-center">
                 <u><b>Problem Analysis</b></u>
             </p>
@@ -545,16 +569,16 @@
                         If you include the <span class="code">–a</span> flag,
                         both local and remote branches will be shown.
                         <br><br>
-                        The branch you are currently on is denoted with an asterisk.
+                        The branch you are currently on is denoted with an asterisk(*).
                         <span style="color: lime;">Local</span> branches are shown in
                         <span style="color: lime;">green</span>.
                         <span style="color: red;">Remote</span> branches are shown in
-                        <span style="color: red;">red</span> and are pre-pended with the notation:
+                        <span style="color: red;">red</span> and are pre-pended with:
                         <span style="color: red;">remotes/origin/</span>.
                         This notation indicates where the branch is at on the server.
                         Without getting too deep, a repository can exist on multiple servers,
                         so there could be multiple "remotes" listed here.
-                        This is a very uncommon situation though.
+                        This is an uncommon situation though.
                     </p>
                 </div>
                 <div class="div-right-half" style="padding-left: 20px; padding-top: 20px;">
@@ -588,12 +612,11 @@
             <p class="common-text-center">
                 to switch between existing branches
             </p>
-            <br>
             <p class="code">
                 git checkout -b &lt;new-branch-name&gt;
             </p>
             <p class="common-text-center">
-                to both create a new branch (based off your latest commit) and switch to it
+                to simultaneously create a new branch (based off your latest commit) and switch to it
             </p>
         </section>
         <section>
@@ -602,9 +625,9 @@
                 <div class="div-left-half" style="padding: 40px 0;">
                     <p class="common-text-justified">
                         In this example, we are starting with only the <span class="code">master</span> branch.
-                        If a user was only developing by him/herself, then developing on
-                        <span class="code">master</span> may be okay, but it’s certainly not acceptable when
-                        working with a team.
+                        If a user was only developing independently, then developing on
+                        <span class="code">master</span> may be okay, but it’s certainly <b><u>NOT</u></b>
+                        acceptable when working with a team.
                         Given this, it is common to have a <span class="code">development</span> branch
                         and individual dev branches for each team member.
                         <br><br>
@@ -619,45 +642,71 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section data-transition="slide-in fade-out">
             <p class="code-title">git push</p>
+            <p class="code">git push &lt;server-name&gt; &lt;branch-name&gt;</p>
             <p class="common-text-justified">
-
+                The command <span class="code">git push</span> is used to migrate changes you have made locally
+                to the remote server, so that other team members can view your additions or modifications.
+                <br><br>
+                The command requires specifying the server name
+                (in this case -- and typically -- <span class="code">origin</span>)
+                and branch name (in this case <span class="code">dev_obiwan</span>).
             </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
+            <img src="img/basics/cli/git-push-1.png" alt="git push example" width="100%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <p class="code-title">git push</p>
+            <p class="code">git push &lt;server-name&gt; &lt;branch-name&gt;</p>
             <p class="common-text-justified">
-
+                You will see in the resulting log that a pull request is created.
+                This pull request is sent to the server.
+                If your project has any limitations on the branch you’re trying to push,
+                a pull request will be created for review prior to updating that specific branch on the server.
+                <span style="color: yellow;">
+                    This is to prevent any erroneous changes from being pushed without being communicated first.
+                </span>
+                If there are no limitations, then the update will happen immediately.
             </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
+            <img src="img/basics/cli/git-push-1.png" alt="git push example" width="100%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out">
             <p class="code-title">git push</p>
-            When a push fails...
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-left">
+                        <br><br>
+                        It’s worth noting that you can also push changes on a different local branch.
+                        Here we are currently on the <span class="code">dev_obiwan</span> branch
+                        but are pushing changes from the <span class="code">development</span> branch.
+                        <br><br><br><br><br>
+                        Afterwards, you can see that both <span class="code">dev_obiwan</span> and
+                        <span class="code">development</span> show as both local and remote branches.
+                    </p>
+                </div>
+                <div class="div-right-half" style="padding-left: 20px;">
+                    <img src="img/basics/cli/git-push-2.png" alt="git push example" width="100%">
+                    <br>
+                    <img src="img/basics/cli/git-push-3.png" alt="git push example" width="80%">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <p class="code-title">git push</p>
+            <p class="common-text-center">When a push fails...</p>
             <p class="common-text-justified">
                 Occasionally the server may reject your push.
                 <u>
                     This usually occurs when you need to pull updates from the server before pushing updates from
                     your local branch.
                 </u>
-            </p>
-            <img src="img/basics/cli/git-push-fail.png" alt="git push failure" width="60%">
-            <p class="common-text-justified">
+                <br>
                 Note the hints that Git is trying to give you:<br>
                 "Updates were rejected because the remote contains work that you do not have locally...<br>
                 You may first want to integrate the remote changes before pushing again."<br>
                 <u>To resolve this, we’ll need to pull updates first</u>.
             </p>
+            <img src="img/basics/cli/git-push-fail.png" alt="git push failure" width="80%">
         </section>
         <section>
             <p class="code-title">git fetch</p>
@@ -678,7 +727,8 @@
             </p>
             <img src="img/basics/cli/git-merge.png" alt="git merge example" width="60%">
             <p class="common-text-justified">
-                If you want to pull from the server, you must include the server name in the branch specification.
+                If you want to merge in updates from the server,
+                you must include the server name in the branch specification.
                 For example:
             </p>
             <p class="code">
@@ -705,7 +755,8 @@
             <img src="img/basics/cli/git-pull.png" alt="git pull example" width="80%">
             <p class="common-text-left">
                 <span class="code">git pull</span>
-                downloads and integrates data from the specified branch on the remote repository into your local branch.
+                downloads <u>and</u> integrates data from the specified branch on the <u>remote</u> repository
+                into your local branch.
                 It is typically used to either:<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;A.) Update the branch you’re currently on, or<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;B.) Pull in changes from another branch
@@ -733,97 +784,6 @@
                 (link opens in new tab)
             </p>
         </section>
-
-
-        <!-- Extras -->
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
-        <section>
-            <p class="code-title">git init</p>
-            <p class="common-text-justified">
-
-            </p>
-            <pre>
-                <code class="bash" data-trim style="font-size: 18px; color: lime">
-                    TODO
-                </code>
-            </pre>
-        </section>
     </div>
 </div>
 
@@ -841,13 +801,6 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
-
-
-
-
-
-
-
 
 </script>
 </body>
