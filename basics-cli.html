@@ -74,7 +74,7 @@
                     <p class="common-text-center">Local Computer</p>
                 </div>
                 <div class="div-right-half">
-                    <a href="basics-cli.html#/20">
+                    <a href="basics-cli.html#/23">
                         <img src="img/basics/remote-server.png" alt="Remote Server" width="70%" height="inherit">
                     </a>
                     <p class="common-text-center">Remote Server</p>
@@ -426,7 +426,7 @@
                 The syntax <span class="code">HEAD~2</span> refers to two commits back from the current branch head.
             </p>
         </section>
-        <section data-transition="fade-in slide-out">
+        <section data-transition="fade-in fade-out">
             <p class="code-title">git checkout -- &lt;filepath(s)&gt;</p>
             <b>A Reset Alternative</b>
             <p class="common-text-justified">
@@ -441,6 +441,67 @@
                 <span class="code">git checkout -- .</span> will revert all changes under the current directory
                 <br><br>
                 <span class="code">git checkout</span> (without the ”--”) is also used to switch between branches.
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <p class="code-title">git revert &lt;commit hash&gt;</p>
+            <b>(Yet Another) Reset Alternative</b>
+            <p class="common-text-justified">
+                <span class="code">git revert</span> is very similar to <span class="code">git reset</span>
+                in that it supports the removal of commits on a branch.
+                <br><br>
+                <span class="code">git revert</span> removes commits on a <em>public</em> branch though,
+                whereas <span class="code">git reset</span> removes commits on a <em>private</em> branch.
+                <br><br>
+                Click the <u>right arrow</u> for a brief summary of these reset options.
+            </p>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Summary of Reset Options</h4>
+            <p class="common-text-center">
+                Below is a reference table for understanding various reset options and when to apply them.
+            </p>
+            <table class="common-text-left">
+                <tr>
+                    <td style="width: 20%">Command</td>
+                    <td style="width: 20%">Scope</td>
+                    <td>Common use cases</td>
+                </tr>
+                <tr>
+                    <td><span class="code">git reset</span></td>
+                    <td>Commit-level</td>
+                    <td>Discard commits in a private branch or throw away uncommitted changes</td>
+                </tr>
+                <tr>
+                    <td><span class="code">git reset</span></td>
+                    <td>File-level</td>
+                    <td>Unstage a file</td>
+                </tr>
+                <tr>
+                    <td><span class="code">git checkout</span></td>
+                    <td>Commit-level</td>
+                    <td>Switch between branches or inspect old snapshots</td>
+                </tr>
+                <tr>
+                    <td><span class="code">git checkout</span></td>
+                    <td>File-level</td>
+                    <td>Discard changes in the working directory</td>
+                </tr>
+                <tr>
+                    <td><span class="code">git revert</span></td>
+                    <td>Commit-level</td>
+                    <td>Undo commits on a public branch</td>
+                </tr>
+                <tr>
+                    <td><span class="code">git revert</span></td>
+                    <td>File-level</td>
+                    <td>(N/A)</td>
+                </tr>
+            </table>
+            <p class="common-text-center" style="font-size: 20px;">
+                <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" target="_blank">
+                    This table was retrieved directly from Atlassian's reference page.
+                </a>
             </p>
         </section>
         <section>
