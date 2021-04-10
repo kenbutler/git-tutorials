@@ -341,6 +341,254 @@
             such as SSH, GPB, or HTTPS. Visit the <a href="security_protocol.html" target="_blank">Security Protocol</a>
             section to learn more before you proceed!<br>(Link opens in new page)
         </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Clone Down Repository from Server</h4>
+            <p class="common-text-justified">
+                Everything we have been doing so far has been on our local machine,
+                but now we want to interact with a server, so that other team members can develop simultaneously.
+                <em>Let's assume we already have a project created on a server.</em>
+                If you return to the initial figure that SourceTree brings up,
+                you will need to select the <em>Remote</em> tab in the top-left.
+            </p>
+            <img src="img/basics/sourcetree/clone-1.png" alt="Cloning a repository" width="70%">
+            <p class="common-text-justified">
+                If you cannot see any repositories or get a warning about not being able to connect,
+                you need to make sure your password is correct in your SourceTree account settings.
+            </p>
+            <p class="common-text-center">
+                (Click the <u>right arrow</u> for the next step)
+            </p>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Clone Down Repository from Server</h4>
+            <p class="common-text-justified">
+                Assuming you can view the repositories though, you will see all the repositories on the Bitbucket server that you have been granted access to.  You can also use the top-right search bar to narrow the selection down.
+
+                Select “Clone” from the right-side of the repository you wish to clone down.
+                You will see a pop-up window asking you where you would like to save the repository.
+                Again,
+                <u><b>ensure the destination path includes a legitimate folder and is NOT your home directory</b></u>.
+            </p>
+            <img src="img/basics/sourcetree/clone-2.png" alt="Details for cloning" width="80%">
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Common Cloning Issue</h4>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-justified">
+                        Sometimes when cloning, you may see a hyperlink shown by the top image.
+                        <br><br>
+                        If you click the link, you may see details like those in the bottom image.
+                        <br><br>
+                        Specifically, note the following two lines:
+                        <br>
+                        <em>fatal: Could not read from remote repository.</em>
+                        <br>
+                        <em>Please make sure you have the correct access rights and the repository exists</em>
+                        <br><br>
+                        This is the most common cloning issue you may face.
+                        There are a few possible causes for this. Click the <u>right arrow</u>
+                        for problem analysis steps.
+                    </p>
+                </div>
+                <div class="div-left-half">
+                    <img src="img/basics/sourcetree/clone-issue-1.png" alt="Clone issue">
+                    <br>
+                    <img src="img/basics/sourcetree/clone-issue-2.png" alt="Clone issue">
+                    <br>
+                    <p class="common-text-center" style="font-size: 14px;">
+                        (In this example, the error was caused by disconnecting from the internet)
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Common Cloning Issue</h4>
+            <p class="common-text-center">
+                <u><b>Problem Analysis</b></u>
+            </p>
+            <ol class="common-text-left">
+                <li>
+                    <b style="color: yellow;">Are you connected to the internet?</b><br>
+                    The error was triggered by disconnecting from the Internet
+                </li>
+                <li>
+                    <b style="color: yellow;">
+                        Do you need to be connected to your organization's VPN? If so, are you?
+                    </b>
+                </li>
+                <li>
+                    <b style="color: yellow;">Can you view the repository on the server / from a browser?</b><br>
+                    <ol>
+                        <li>
+                            If so, then ensure you've configured your
+                            <a href="" target="_blank">security protocol</a>.
+                        </li>
+                        <li>
+                            If not, then you likely do not have access to the repository.
+                            You may need to contact your organization's admins about this.
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Viewing Remote Repository</h4>
+            <p class="common-text-justified">
+                Assuming you did not run into a cloning issue, a figure should open for managing the repository.
+                If you navigate to the <em>History</em> section, you will see the commits we made previously.
+                Please note that <em>these commits exist on the remote server only because I pushed them up there</em>.
+                They do not magically place themselves on the server without someone commanding this change.
+            </p>
+            <img src="img/basics/sourcetree/view-remote-repo-1.png" alt="Viewing remote repository" width="70%">
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Viewing Remote Repository</h4>
+            <p class="common-text-justified">
+                While this looks very similar to what we saw before for our local repository,
+                notice the new branch names listed under the description.
+            </p>
+            <img src="img/basics/sourcetree/view-remote-repo-1.png" alt="Viewing remote repository" width="70%">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Viewing Remote Repository</h4>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-justified">
+                        Any branch name that begins with <em>origin/</em> represents a branch on the server.
+                        It is called <em>origin</em> because that is the default name for the server.
+                        This can be changed, but it’s usually not necessary.
+                        You will see we have one branch called <em>master</em> and another called <em>origin/master</em>.
+                        The one pre-pended with <em>origin/</em> is what the <em>server</em> sees,
+                        whereas the other is was your <em>local</em> machine sees.
+                        These can be at different commits, depending on whether or not changes have been pushed to the server.
+                        <br><br>
+                        You can also see the icon with three circles connected by lines.
+                        This indicates it is a branch.
+                        There are other items called <em>tags</em> that are covered elsewhere and have a different icon.
+                    </p>
+                </div>
+                <div class="div-right-half" style="padding: 100px 0;">
+                    <img src="img/basics/sourcetree/view-remote-repo-2.png" alt="Viewing remote repository">
+                </div>
+            </div>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <section>
+                <h4>Create a New Branch</h4>
+                <div class="div-whole-of-parts">
+                    <div class="div-left-half">
+                        <p class="common-text-justified">
+                            Branching is key to team workflow.
+                            <br>
+                            <b><u>Creating a branch is cheap and easy</u></b>.
+                            <br><br>
+                            Select the <em>Branch</em> button from the top menu.
+                            You will see a drop-down menu such as the bottom figure here.
+                            Make sure <em>New Branch</em> is selected.
+
+                            Name the new branch (here we call it <em>development</em>.
+                            While we have been working on the <em>master</em> branch in our local repository,
+                            this is typically <em>BAD</em> practice when working with a remote repository and with a team.
+                            <b><u>
+                                The master branch should remain stable as much as possible,
+                                so no development should be done on master
+                            </u></b>.
+                            <br><br>
+                            (Click the <u>down arrow</u> for more details on branch creation options)
+                        </p>
+                    </div>
+                    <div class="div-right-half">
+                        <img src="img/basics/sourcetree/create-branch-1.png" alt="Creating a new branch">
+                        <br>
+                        <img src="img/basics/sourcetree/create-branch-2.png" alt="New branch specifics">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h4>Create a New Branch</h4>
+                <div class="div-whole-of-parts">
+                    <div class="div-left-half">
+                        <p class="common-text-justified">
+                            To explain the radio buttons next to “Commit”:
+                            <br><br>
+                            <em>Working copy parent</em> indicates that we are branching off our
+                            current branch’s last stable commit.
+                            <br><br>
+                            <em>Specified commit</em> indicates that we want to branch off a specific commit in history.
+                            <br><br>
+                            <em>Checkout new branch</em> indicates that we want to checkout
+                            or begin using our newly created branch <em>immediately</em> after we create it.
+                        </p>
+
+                    </div>
+                    <div class="div-right-half">
+                        <img src="img/basics/sourcetree/create-branch-2.png" alt="New branch specifics">
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Create a New Branch</h4>
+            <p class="common-text-justified">
+                Now we can see that the <em>development</em> branch has been created AND we have checked it out.
+                You can see which branch is checked out by viewing the branches under the <em>BRANCHES</em> section
+                (which you may need to reveal).
+                The currently checked out branch is listed in bold with a circle next to it.
+            </p>
+            <img src="img/basics/sourcetree/create-branch-3.png" alt="Branch has been created" width="80%">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Create a New Branch</h4>
+            <p class="common-text-justified">
+                Individual developers should create their own, unique branches for development.
+                Here, Obi Wan creates one for himself.
+                Again we are going to checkout the new branch upon creation.
+            </p>
+            <img src="img/basics/sourcetree/create-branch-4.png" alt="Individual developer branch">
+        </section>
+
+        <!-- TODO -->
+        <section>
+            <h4>Checkout a Different Branch</h4>
+            <p class="common-text-justified">
+                Now that we have our individual branch, let’s see how we could checkout another branch.
+                We can see on the left that our current branch is <em>dev_obiwan</em>.
+                Let’s say we want to checkout the <em>development</em> branch.
+                Right-click on the branch you want to checkout and select Checkout development
+                (or whatever the branch name is).
+                You will then see that the <em>development</em> branch has been checked out.
+            </p>
+            <img src="img/basics/sourcetree/checkout-branch.png" alt="Process of checking out a branch" width="80%">
+        </section>
+        <section>
+            <h4></h4>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+        </section>
+        <section>
+            <h4></h4>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+        </section>
+        <section>
+            <h4></h4>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+        </section>
+        <section>
+            <h4></h4>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+        </section>
     </div>
 </div>
 

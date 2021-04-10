@@ -352,14 +352,16 @@
             </p>
         </section>
         <section data-transition="slide-in fade-out">
-            <p class="code-title">git reset</p>
-            <p class="common-text-center">
-                Now let’s say we went ahead and added the logic file to the staging area of Git.
+            <h4>Undoing Things</h4>
+            <p class="common-text-justified">
+                Sometimes we may want to undo changes that we've either committed, staged, or simply modified.
+                There are a number of tools for this.
+                Let’s say we went ahead and added the logic file to the staging area of Git.
             </p>
             <img src="img/basics/cli/git-reset-1.png" alt="git reset example" width="70%">
             <p class="common-text-justified">
                 <b><u><span style="color: red;">But wait!</span></u></b>
-                We realized before committing that we do <u>NOT</u> want to make these changes.
+                We realize before committing that we do <u>NOT</u> want to make these changes.
                 We could continue to change the file without committing it, but for the sake of example,
                 let’s <u>unstage</u> the file for safety.
             </p>
@@ -367,19 +369,26 @@
         <section data-transition="fade-in fade-out">
             <p class="code-title">git reset</p>
             <p class="common-text-justified">
-                We can unstage a file, directory or multiple of both using the command:
+                <span class="code">git reset</span> allows us to <u>unstage</u> a file through a <u>soft</u> reset.
+                Changes to files are maintained, but they are no longer staged for committing.
             </p>
             <p class="code">
-                <span class="code">git reset HEAD &lt;files or directories&gt;</span>
+                <span class="code">git reset &lt;commit/reference&gt; &lt;files or directories&gt;</span>
+            </p>
+            <p class="common-text-justified">
+                Here we will just unstage <span class="code">logic.py</span>.
+            </p>
+            <p class="code">
+                <span class="code">git reset HEAD logic.py</span>
             </p>
             <p class="common-text-justified">
                 The term <span class="code">HEAD</span> is a reference to the last commit of the currently
                 checked-out branch.
                 <br>
-                Checking the repository’s status afterwards shows that the <span class="code">logic.py</span>
-                file is now unstaged.
+                Checking the repository’s status afterwards shows that <span class="code">logic.py</span>
+                is now unstaged.
             </p>
-            <img src="img/basics/cli/git-reset-2.png" alt="git reset example" width="100%">
+            <img src="img/basics/cli/git-reset-2.png" alt="git reset example" width="80%">
         </section>
         <section data-transition="fade-in fade-out">
             <p class="code-title">git reset</p>
@@ -396,8 +405,25 @@
             </p>
             <p class="common-text-justified">
                 This command will destroy all of the uncommitted changes you have made.
+                This is a <span class="code">--hard</span> reset.
                 There are some instances where it is useful or even necessary, but it should be used with caution and
                 awareness.
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <p class="code-title">git reset</p>
+            <p class="common-text-justified">
+                <span class="code">git reset</span> can also be used to remove commits through a
+                <span class="code">--soft</span> reset.
+            </p>
+            <p class="code">
+                git reset --soft &lt;commit/reference&gt;
+            </p>
+            <p class="common-text-justified">
+                For example, we may want to remove the most recent two commits:
+            </p>
+            <p class="common-text-justified">
+                The syntax <span class="code">HEAD~2</span> refers to two commits back from the current branch head.
             </p>
         </section>
         <section data-transition="fade-in slide-out">
@@ -536,7 +562,7 @@
             <ol class="common-text-left">
                 <li>
                     <b style="color: yellow;">Are you connected to the internet?</b><br>
-                    The error above was triggered by disconnecting from the Internet
+                    The error was triggered by disconnecting from the Internet
                 </li>
                 <li>
                     <b style="color: yellow;">
