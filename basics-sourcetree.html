@@ -89,8 +89,8 @@
         <section data-transition="slide-in fade-out">
             <h4>Creating a Local Repository</h4>
             <p class="common-text-center">
-                To create a local repository using SourceTree, go to the "Local" tab and select<br>
-                New... > Create Local Repository
+                To create a local repository using SourceTree, go to the <em>Local</em> tab and select<br>
+                <em>New... > Create Local Repository</em>
             </p>
             <img src="img/basics/sourcetree/create-local-repo-1.png" alt="" width="80%" height="inherit">
         </section>
@@ -132,25 +132,19 @@
                 <br><br>
                 Let’s add some fake files as an example.
             </p>
-            <div class="div-whole-of-parts">
-                <div style="float: left; width: 70%;">
-                    <img src="img/basics/sourcetree/view-repo.png" alt="Empty repository" width="100%">
-                </div>
-                <div style="float: left; width: 30%;">
-                    <img src="img/basics/sourcetree/add-file.png" alt="Adding a file" width="100%">
-                </div>
-            </div>
+            <img src="img/basics/sourcetree/add-file.png" alt="Adding a file" width="70%">
         </section>
         <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
             <p class="common-text-justified">
-                Here we've added a directory ("droid") for software used in developing dummy droids for Jedi training.
+                Here we've added a directory (<em>droid</em>) for software used in developing dummy droids for
+                Jedi training.
                 Inside the directory is a file and a subdirectory with a file.
             </p>
             <p class="common-text-center">
                 Let’s analyze the relevant new pieces here.
             </p>
-            <img src="img/basics/sourcetree/view-local-changes.png" alt="Local changes" width="80%" height="inherit">
+            <img src="img/basics/sourcetree/view-local-changes.png" alt="Local changes" width="70%" height="inherit">
         </section>
         <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
@@ -159,14 +153,7 @@
                 <br>
                 This is because SourceTree sees two new files.
             </p>
-            <div class="div-whole-of-parts">
-                <div style="float: left; width: 30%;">
-                    <img src="img/basics/sourcetree/num-changes-since-last-commit.png" alt="Adding a file" width="100%">
-                </div>
-                <div style="float: left; width: 70%;">
-                    <img src="img/basics/sourcetree/view-local-changes.png" alt="Local changes" width="100%">
-                </div>
-            </div>
+            <img src="img/basics/sourcetree/view-local-changes.png" alt="Local changes" width="70%">
         </section>
         <section data-transition="fade-in fade-out">
             <h4>Viewing Local Changes</h4>
@@ -250,7 +237,7 @@
         <section data-transition="slide-in fade-out">
             <h4>Committing Changes</h4>
             <p class="common-text-center">
-                Now that we've staged the files we want to commit, select the "Commit" button.
+                Now that we've staged the files we want to commit, select the <em>Commit</em> button.
             </p>
             <div class="div-whole-of-parts">
                 <div style="float: left; width: 30%;">
@@ -264,7 +251,7 @@
         <section data-transition="fade-in fade-out">
             <h4>Committing Changes</h4>
             <p class="common-text-center">
-                Now that we’ve selected “Commit”, we must add a message to describe the changes.
+                Now that we’ve selected <em>Commit</em>, we must add a message to describe the changes.
             </p>
             <img src="img/basics/sourcetree/commit-message.png" alt="Adding a commit message"
                  width="80%" height="inherit">
@@ -286,14 +273,11 @@
         </section>
         <section data-transition="fade-in slide-out">
             <h4>Committing Changes</h4>
-            <p class="common-text-center">
-                Now that we’ve added a message and hit “Commit”, we see this screen.
-                <br>
+            <p class="common-text-justified">
+                Now that we’ve added a message and hit <em>Commit</em>, we see this screen.
                 <u>What is this screen telling us?</u>
-                <br>
                 It is telling us that there have been no changes to our repository since the last commit we made.
-                <br>
-                Let’s view the history of the commits now. Select the “History” item under “Workspace”
+                Let’s view the history of the commits now. Select the <em>History</em> item under <em>Workspace</em>
             </p>
             <img src="img/basics/sourcetree/nothing-to-commit.png" alt="No changes to commit"
                  width="80%" height="inherit">
@@ -321,11 +305,13 @@
         <section data-transition="fade-in slide-out">
             <h4>Resetting Changes</h4>
             <p class="common-text-justified">
-                To reset the changes made to this file, right-click on the file within SourceTree and select “Reset…”.
-                Note that we also see “Reset to Commit…”. This latter option is only useful if we want to reset the file
-                to some commit further back in history, not immediately previous to your current state.
+                To reset the changes made to this file, right-click on the file within SourceTree and select
+                <em>Reset...</em>.
+                Note that we also see <em>Reset to Commit…</em>.
+                This latter option is only useful if we want to reset the file to some commit further back in history,
+                not immediately previous to your current state.
                 You will likely receive a prompt asking you if you are sure you want to do this. If you are,
-                select "Yes."
+                select <em>Yes</em>.
                 In this case, you'll return to the empty <b>File Status</b> screen.
             </p>
             <img src="img/basics/sourcetree/resetting-changes-2.png" alt="Resetting changes"
@@ -362,12 +348,16 @@
         <section data-transition="fade-in slide-out">
             <h4>Clone Down Repository from Server</h4>
             <p class="common-text-justified">
-                Assuming you can view the repositories though, you will see all the repositories on the Bitbucket server that you have been granted access to.  You can also use the top-right search bar to narrow the selection down.
+                Assuming you can view the repositories though, you will see all the repositories on the
+                server that you have been granted access to.
+                You can also use the top-right search bar to narrow the selection down.
 
-                Select “Clone” from the right-side of the repository you wish to clone down.
+                Select <em>Clone</em> from the right-side of the repository you wish to clone down.
                 You will see a pop-up window asking you where you would like to save the repository.
                 Again,
-                <u><b>ensure the destination path includes a legitimate folder and is NOT your home directory</b></u>.
+                <u><b><span style="color: yellow;">
+                    ensure the destination path includes a legitimate folder and is NOT your home directory
+                </span></b></u>.
             </p>
             <img src="img/basics/sourcetree/clone-2.png" alt="Details for cloning" width="80%">
         </section>
@@ -375,7 +365,7 @@
             <h4>Common Cloning Issue</h4>
             <div class="div-whole-of-parts">
                 <div class="div-left-half">
-                    <p class="common-text-justified">
+                    <p class="common-text-left">
                         Sometimes when cloning, you may see a hyperlink shown by the top image.
                         <br><br>
                         If you click the link, you may see details like those in the bottom image.
@@ -391,7 +381,7 @@
                         for problem analysis steps.
                     </p>
                 </div>
-                <div class="div-left-half">
+                <div class="div-right-half">
                     <img src="img/basics/sourcetree/clone-issue-1.png" alt="Clone issue">
                     <br>
                     <img src="img/basics/sourcetree/clone-issue-2.png" alt="Clone issue">
@@ -547,8 +537,6 @@
             </p>
             <img src="img/basics/sourcetree/create-branch-4.png" alt="Individual developer branch">
         </section>
-
-        <!-- TODO -->
         <section>
             <h4>Checkout a Different Branch</h4>
             <p class="common-text-justified">
@@ -561,33 +549,206 @@
             </p>
             <img src="img/basics/sourcetree/checkout-branch.png" alt="Process of checking out a branch" width="80%">
         </section>
-        <section>
-            <h4></h4>
+        <section data-background="white" data-transition="slide-in fade-out">
+            <h4>Pushing Changes to Server</h4>
             <p class="common-text-justified">
-
+                Okay so let’s make a change in push it to the server.
+                <u>Why do we push our changes to the server?</u>
+                Well, because when you positively contribute to the code base,
+                you need to share them with the rest of your team, whom also have access to the server.
+                <em><u><b>In this way, the distributed work becomes synchronized.</b></u></em>
             </p>
-            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+            <img src="img/basics/sourcetree/push-changes-1.png" alt="Pushing changes to server for team" width="70%">
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Pushing Changes to Server</h4>
+            <p class="common-text-justified">
+                In this example, let’s say we created a new script for managing power loads of the droid.
+                We create, stage and commit the <span class="code">power.py</span> file to our local branch.
+            </p>
+            <img src="img/basics/sourcetree/push-changes-2.png" alt="Push example" width="70%">
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Pushing Changes to Server</h4>
+            <p class="common-text-justified">
+                We can see that Chewbacca has also some pushed updates to the repository.
+                We’ll pull in those changes soon, but <u>let’s go ahead and push our changes out</u>.
+            </p>
+            <img src="img/basics/sourcetree/push-changes-3.png" alt="Push example" width="70%">
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Pushing Changes to Server</h4>
+            <p class="common-text-justified">
+                Select <em>Push</em> from the top-menu.
+                In the pop-up menu, select the branch that you want to push
+                – in this case it is only <span class="code">dev_obiwan</span>.
+                You will be pushing to the <em>origin</em> repository, unless you named it otherwise.
+                We are not covering tags in this section, so do not worry about checking that box.
+            </p>
+            <img src="img/basics/sourcetree/push-changes-4.png" alt="Pushing changes to server">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Pushing Changes to Server</h4>
+            <p class="common-text-justified">
+                Once you select <em>OK</em> and push, you will see that <span class="code">origin/dev_obiwan</span>
+                has been added to the branch graph and is up-to-date with the local branch.
+            </p>
+            <p class="common-text-center">
+                <b><em>That's it!</em></b> Now other users can pull in your changes!
+            </p>
+            <img src="img/basics/sourcetree/push-changes-5.png" alt="Status after pushing changes">
         </section>
         <section>
-            <h4></h4>
+            <h4>When a Push Fails</h4>
             <p class="common-text-justified">
-
+                Sometimes a push is rejected by the server.
+                This usually occurs when you need to pull updates from the server <em>before</em>
+                pushing updates from your local branch.
             </p>
-            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+            <img src="img/basics/sourcetree/push-fail.png" alt="Push failure" width="70%">
+            <p class="common-text-justified">
+                Note the hints that SourceTree is trying to give you:<br>
+                <em>Updates were rejected because the remote contains work that you do not have locally.</em><br>
+                <em>You may first want to integrate the remote changes before pushing again.</em>
+            </p>
+            <p class="common-text-center">
+                <u>So to resolve this, we’ll need to pull updates first</u>.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Fetching Changes from the Server</h4>
+            <p class="common-text-justified">
+                Git uses the term <em>fetch</em> to indicate it is grabbing updates from the server
+                and storing them locally -- but is <u>NOT</u> integrating them into any of your local branches.
+                <br><br>
+                To fetch updates, select the <em>Fetch</em> button from the top-menu.
+                You will likely only need to check the box <em>Fetch from all remotes</em>.
+                (The other options are beyond the scope of this section).
+            </p>
+            <img src="img/basics/sourcetree/fetch-1.png" alt="Fetch example" width="100%">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Fetching Changes from the Server</h4>
+            <p class="common-text-justified">
+                You will notice that we fetched another update from Chewbacca’s branch.
+                He has not merged his latest change into the development branch,
+                so we’ll assume he’s still in development for now.
+                Let’s merge in the latest updates from the <span class="code">development</span> branch.
+            </p>
+            <img src="img/basics/sourcetree/fetch-2.png" alt="Fetch example" width="70%">
+        </section>
+        <section data-transition="slide-in fade-out">
+            <section>
+                <h4>Merge Changes from Branch</h4>
+                <p class="common-text-justified">
+                    To merge in changes from another branch or commit, select <em>Merge</em> from the top menu.
+                    Make sure you select <em>Merge from Log</em>.
+                    Select the commit that you want merge in.
+                    In our case, we want to merge in the <em>HEAD</em> of the
+                    <span class="code">development</span> branch.
+                </p>
+                <img src="img/basics/sourcetree/merge-1.png" alt="Merging in remote changes" width="60%">
+            </section>
+            <section>
+                <h4>Merge Changes from Branch</h4>
+                <img src="img/basics/sourcetree/merge-2.png" alt="Options during merge" width="60%">
+                <p class="common-text-justified">
+                    To explain the options at the bottom:<br>
+                    - <span style="color: yellow;"><b><em>Commit merge immediately (if no conflicts)</em></b></span> :
+                    This will make a commitment saying you’ve merged in changes from another branch
+                    immediately upon merging.
+                    <br>
+                    - <span style="color: yellow;"><b><em>Include messages from commits...</em></b></span> :
+                    This is pretty self-explanatory
+                    <br>
+                    - <span style="color: yellow;"><b><em>Create a commit...</em></b></span> :
+                    The tricky part here is <b><em>fast-forward</em></b>.
+                    If a branch has been updated on the server but the local branch has not,
+                    sometimes it is just like fast-forwarding the branch in time through the Git history.
+                    In this case, we do not typically need a new commit, but the option is here if you do want it.
+                    <br>
+                    - <span style="color: yellow;"><b><em>Rebase instead of merge...</em></b></span> :
+                    Rebasing is an advanced topic outside the scope of this section,
+                    so don’t worry about it and simply leave it unchecked.
+                </p>
+            </section>
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Merge Changes from Server</h4>
+            <p class="common-text-justified">
+                <b><u>
+                    If there is a problem encountered when SourceTree is merging,
+                    this is known as a <em>merge conflict</em>
+                </u></b>.
+                <a href="merge-conflicts-sourcetree.html" target="_blank">
+                    Merge conflicts are covered elsewhere
+                </a>
+                (link opens in new tab).
+                <br><br>
+                Now that we’ve merged, we see the branch graph has updated to show how our local
+                <span class="code">dev_obiwan</span> branch merged in updates from the <em>HEAD</em>
+                of the <span class="code">development</span> branch.
+            </p>
+            <img src="img/basics/sourcetree/merge-3.png" alt="Status after a local merge">
+        </section>
+        <section data-transition="fade-in fade-out">
+            <h4>Merge Changes from Server</h4>
+            <p class="common-text-justified">
+                You will also notice that the <em>Push</em> button has a <em>2</em> above it.
+                This indicates that our local branch is 2 commits ahead of the equivalent branch on the server.
+            </p>
+            <img src="img/basics/sourcetree/merge-4.png" alt="Status after a local merge">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Merge Changes from Server</h4>
+            <p class="common-text-justified">
+                If we push our changes to the server, you will see that the server also updated the branch.
+            </p>
+            <img src="img/basics/sourcetree/merge-5.png" alt="Pushing up our branch after a merge">
+        </section>
+        <section data-transition="slide-in fade-out">
+            <h4>Pull Changes from Server</h4>
+            <p class="common-text-justified">
+                While it is best practice to pull from the main <span class="code">development</span> branch,
+                there may be causes where you will want to pull from another developer’s individual branch.
+                For example, maybe you and another programmer are working on a task in tandem.
+                In this scenario, let’s pull in the extra work Chewbacca has done.
+                <br><br>
+                Select <em>Pull</em> from the top menu and specify Chewbacca’s development branch.
+                This pop-up window looks similar to that of a merge.
+            </p>
+            <img src="img/basics/sourcetree/pull-1.png" alt="Pulling changes from server" width="80%">
+        </section>
+        <section data-transition="fade-in slide-out">
+            <h4>Pull Changes from Server</h4>
+            <p class="common-text-justified">
+                You will see that our local <span class="code">dev_obiwan</span> branch has been updated to
+                include Chewbacca’s latest changes.
+                Of course, at this point, you could push to the server again if you wanted.
+            </p>
+            <img src="img/basics/sourcetree/pull-2.png" alt="Pulling changes from server">
         </section>
         <section>
-            <h4></h4>
-            <p class="common-text-justified">
-
+            <h4>Fetch vs. Pull</h4>
+            <p class="common-text-center">
+                In Git, a pull essentially a fetch followed by a merge.
             </p>
-            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
-        </section>
-        <section>
-            <h4></h4>
-            <p class="common-text-justified">
-
+            <p class="code">
+                git pull = git fetch + git merge
             </p>
-            <img src="img/basics/sourcetree/blaaaah.png" alt="EXAMPLE">
+            <p class="common-text-center">
+                <a href="https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull"
+                   target="_blank">Click here for a more detailed explanation</a>
+                <br>
+                (link opens in new tab)
+            </p>
+            <p class="common-text-center">
+                There can be conflicts introduced when performed git pull,
+                <b>specifically if the updates from the server fail to merge smoothly with your local branch</b>.
+                <br>
+                <a href="merge-conflicts-sourcetree.html" target="_blank">Conflict resolution is covered here</a>
+                (link opens in new tab)
+            </p>
         </section>
     </div>
 </div>
