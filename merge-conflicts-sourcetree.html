@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Git Tutorials | Merge Conflicts - SourceTree</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <!-- Icon -->
+    <link rel="icon" href="img/icon/git.ico">
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript">ddlevelsmenu.setup("ddtopmenubar", "topbar")</script>
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="nav" class="ddsmoothmenu">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="team_workflow.html">Workflow</a></li>
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="security_protocol.html">Security Protocol</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="basic_commands.html">Basics</a></li>
+            <li><a href="merge_conflicts.html" style="color:white; background-color:#1A1A1A">Merge Conflicts</a></li>
+            <li><a href="binary_files.html">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
+            <li><a href="help.html">Help!</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <br style="clear: left"/>
+    </div>
+</div>
+<!-- Content -->
+<div id="content" class="reveal">
+    <div class="slides">
+        <section>
+            <h3>Merge Conflicts</h3>
+            <h4>SourceTree</h4>
+            <p class="common-text-justified">
+                When using Git in a team, it's inevitable that a merge conflict will arise <em>eventually</em>.
+                Merge conflicts occur when trying to pull in updates to your local branch
+                <em>or</em> when merging in another branch.
+                Git tries to automatically integrate differences between the branches,
+                but sometimes it's not clear to Git <em>which</em> side is correct.
+                Rather than making an assumption about what the <em>correct</em> change is,
+                Git will throw a merge conflict.
+                Some instances may result in multiple merge conflicts.
+                It's up to the user to resolve these merge conflicts before moving on.
+                <br><br>
+                It's important to understand both how a merge conflict can arise and how to resolve one.
+                This section presents a simple scenario of how a merge conflict may present itself.
+                It also addresses strategies for merge conflict resolution.
+            </p>
+            <p class="common-text-justified" style="color: yellow;">
+                Note the arrow(s) in the bottom-right corner that controls navigation through the lesson.
+                You may also navigate by pressing ESC and using the arrow keys.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
+            <p class="common-text-center">
+                Let's first consider <em>how merge conflicts arise</em>.
+                <br>
+                They typically occur when multiple developers touch the same file.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out" data-background="white">
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="40%">
+            <h4>Team Lead</h4>
+            <p class="common-text-justified">
+                In this scenario, Darth Vader is tasking his team with various upgrades to his Death Star.
+                First, though, he writes a file himself.
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
+            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <p class="common-text-justified">
+                In the new file Darth Vader has created,
+                he has included a few variables indicating characteristics of the Death Star.
+                He tests his code out and pushes to the master branch once all tests pass.
+                <br><br>
+                He then divvies out some tasks to his other team members.
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <p class="common-text-justified">
+                He has given out two tasks.
+                One to write code for the maneuvering of the Death Star throughout the galaxy,
+                and another for real-time monitoring of weapon metrics.
+                Vader may or may not realize it,
+                but it is likely that both tasks will require editing of the same file.
+            </p>
+            <img src="img/merge-conflicts/tasking.png" alt="Empire Tasking" width="60%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <p class="common-text-justified">
+                While it would be ideal that either (A) team members communicate with each other about this beforehand,
+                or (B) are instructed to do so by the team lead,
+                <b>workflows do not always present themselves that nicely</b>.
+                In this scenario, <em>let’s assume the worst</em>.
+            </p>
+            <img src="img/merge-conflicts/tasking.png" alt="Empire tasking" width="60%">
+            <img src="img/merge-conflicts/death-star-file-orig.png" alt="Original file" width="30%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <img src="img/character/Boba-Fett.png" alt="Boba Fett" width="40%">
+            <img src="img/merge-conflicts/death-star-file-boba-fett.png" alt="Boba Fett's changes" width="40%">
+            <p class="common-text-justified">
+                Boba Fett goes off and adds a maneuvering method to the Death Star code.
+                <b>Notice that he has changed the known radius of the Death Star from <u>160 km to 140 km</u>.</b>
+                We can’t be sure if this was by <em>accident</em>
+                or through some knowledge that was gained in the development process.
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <img src="img/merge-conflicts/death-star-file-jawa.png" alt="Jawa's changes" width="40%">
+            <img src="img/character/Jawa.png" alt="Boba Fett" width="40%">
+            <p class="common-text-justified">
+                The Jawa also progresses in its work on weapon metrics.
+                Oddly, though, the Jawa has <em>also</em> changed the radius of the Death Star --
+                <b>from <u>160 km to 150 km</u></b>.
+                <b>Both developers changed the same line.</b>
+                <span style="color: red;">
+                    This sort of conflict will cause a merge conflict in Git.
+                </span>
+                This is common when developers work within the same file.
+            </p>
+        </section>
+        <section data-transition="slide-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                Now that we've seen an example of how a merge conflict may arise, let's resolve one!
+                <br><br>
+                In a galaxy far, far away, another software team faces another merge conflict...
+                (<em>click right arrow</em>)
+            </p>
+        </section>
+
+        <!-- TODO -->
+        <section data-transition="fade-in fade-out" data-background="white">
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
+            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <p class="common-text-justified">
+
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
+            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <p class="common-text-justified">
+
+            </p>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
+            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <p class="common-text-justified">
+
+            </p>
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+        <section>
+            <p class="common-text-justified">
+
+            </p>
+            <img src="aaa.png" alt="EXAMPLE" width="100%">
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+
+
+
+</script>
+</body>
+</html>
