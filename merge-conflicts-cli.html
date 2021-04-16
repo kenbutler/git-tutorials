@@ -79,7 +79,8 @@
             </p>
         </section>
         <section data-transition="slide-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="40%">
+            <h4>How Merge Conflicts Arise</h4>
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
             <h4>Team Lead</h4>
             <p class="common-text-justified">
                 In this scenario, Darth Vader is tasking his team with various upgrades to his Death Star.
@@ -87,6 +88,7 @@
             </p>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
             <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
             <p class="common-text-justified">
@@ -98,6 +100,7 @@
             </p>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <p class="common-text-justified">
                 He has given out two tasks.
                 One to write code for the maneuvering of the Death Star throughout the galaxy,
@@ -108,6 +111,7 @@
             <img src="img/merge-conflicts/tasking.png" alt="Empire Tasking" width="60%">
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <p class="common-text-justified">
                 While it would be ideal that either (A) team members communicate with each other about this beforehand,
                 or (B) are instructed to do so by the team lead,
@@ -118,126 +122,257 @@
             <img src="img/merge-conflicts/death-star-file-orig.png" alt="Original file" width="30%">
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Boba-Fett.png" alt="Boba Fett" width="40%">
-            <img src="img/merge-conflicts/death-star-file-boba-fett.png" alt="Boba Fett's changes" width="40%">
-            <p class="common-text-justified">
-                Boba Fett goes off and adds a maneuvering method to the Death Star code.
-                <b>Notice that he has changed the known radius of the Death Star from <u>160 km to 140 km</u>.</b>
-                We can’t be sure if this was by <em>accident</em>
-                or through some knowledge that was gained in the development process.
-            </p>
+            <h4>How Merge Conflicts Arise</h4>
+            <div class="div-left-half">
+                <img src="img/character/Boba-Fett.png" alt="Boba Fett" width="40%">
+                <br>
+                Boba Fett
+                <br>
+                <p class="common-text-justified">
+                    Boba Fett adds a maneuvering method to the Death Star code.
+                    <b>Notice that he has changed the known radius of the Death Star from <u>160 km to 140 km</u>.</b>
+                    We can’t be sure if this was by <em>accident</em>
+                    or through some knowledge that was gained in the development process.
+                </p>
+            </div>
+            <div class="div-right-half">
+                <img src="img/merge-conflicts/death-star-file-boba-fett.png" alt="Boba Fett's changes" width="100%">
+            </div>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/merge-conflicts/death-star-file-jawa.png" alt="Jawa's changes" width="40%">
-            <img src="img/character/Jawa.png" alt="Boba Fett" width="40%">
-            <p class="common-text-justified">
-                The Jawa also progresses in its work on weapon metrics.
-                Oddly, though, the Jawa has <em>also</em> changed the radius of the Death Star --
-                <b>from <u>160 km to 150 km</u></b>.
-                <b>Both developers changed the same line.</b>
-                <span style="color: red;">
+            <h4>How Merge Conflicts Arise</h4>
+            <div class="div-left-half">
+                <img src="img/merge-conflicts/death-star-file-jawa.png" alt="Jawa's changes" width="100%">
+            </div>
+            <div class="div-right-half">
+                <img src="img/character/Jawa.png" alt="Jawa" width="40%">
+                <br>
+                Jawa
+                <br>
+                <p class="common-text-justified">
+                    The Jawa also progresses in its work on weapon metrics.
+                    Oddly, though, the Jawa has <em>also</em> changed the radius of the Death Star --
+                    <b>from <u>160 km to 150 km</u></b>.
+                    <b>Both developers changed the same line.</b>
+                    <span style="color: red;">
                     This sort of conflict will cause a merge conflict in Git.
                 </span>
-                This is common when developers work within the same file.
-            </p>
+                    This is common when developers work within the same file.
+                </p>
+            </div>
         </section>
         <section data-transition="slide-in fade-out" data-background="white">
             <h4>How to Resolve Merge Conflicts</h4>
-            <p class="common-text-center">
-                Now that we've seen an example of how a merge conflict may arise, let's resolve one!
+            <p class="common-text-justified">
+                Unlike the previous scenario, merge conflicts are not always as easily foreseen.
+                Often, developers simply pull in updates and may initially have no idea why they occurred!
+                Given this, it's worth approaching <em>how to solve</em> merge conflicts in a way that a developer
+                would normally experience them. So let's introduce a new scenario for this and begin fresh.
                 <br><br>
                 In a galaxy far, far away, another software team faces another merge conflict...
                 (<em>click right arrow</em>)
             </p>
         </section>
-
-        <!-- TODO -->
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
-            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <img src="img/merge-conflicts/cli/initial-pull.png" alt="Initial Conflict" width="60%">
             <p class="common-text-justified">
-
+                Obi-Wan Kenobi and Chewbacca are developing software for the Republic.
+                Obi-Wan wants to incorporate Chewbacca's latest updates.
+                Obi-Wan tries to pull in Chewbacca's branch, but runs into a merge conflict!
+                The details show that the problem lies in the README file:
             </p>
-        </section>
-        <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
-            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
-            <p class="common-text-justified">
-
+            <p class="code" style="color: blue;">
+                CONFLICT (content): Merge conflict in droid/README
             </p>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
-            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <section>
+                <h4>How to Resolve Merge Conflicts</h4>
+                <p class="common-text-justified">
+                    If we check the status of our repository, we will see that the README
+                    is under the <em>unmerged paths</em>.
+                    <u>Unmerged paths indicate merge conflicts</u>.
+                    <br><br>
+                    As mentioned in the snippet below, we can also abort the merge entirely,
+                    but we do not want to do that here.
+                    Select the down arrow to see how one would abort a merge conflict.
+                </p>
+                <img src="img/merge-conflicts/cli/status-post-pull.png"
+                     alt="git status after a merge conflict" width="60%">
+            </section>
+            <section>
+                <h4>Aborting a Merge</h4>
+                <p class="common-text-justified">
+                    If you've encountered a merge conflict, you may want to first consult with peers before proceeding.
+                    If they are not immediately available to you, you may want to <em>abort</em> the merge
+                    and proceed with it later.
+                    There are other reasons you may want to abort a merge as well.
+                    Regardless, if you want to abort a merge, you can use this command from the command line:
+                </p>
+                <p class="code" style="color: blue;">
+                    git merge --abort
+                </p>
+            </section>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-justified">
+                        If you open the file that caused the conflict, you can see what exactly is happening.
+                        On the right, we've opened the file for a closer view.
+                        We see that the file has additions, which include some weird things like angular brackets,
+                        <span class="code" style="color: blue;">HEAD</span>, and a long hexadecimal number.
+                    </p>
+                </div>
+                <div class="div-right-half">
+                    <img src="img/merge-conflicts/cli/analyzing-conflict.png" alt="Analyzing the conflict" width="100%">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <ul class="common-text-left">
+                        <li>
+                            The angular brackets indicate the beginning and end of a conflicted segment.
+                        </li>
+                        <li>
+                            The equal signs separate the code from the two branches
+                            <ul>
+                                <li>
+                                    The top half is from the branch you are merging into
+                                    (e.g. <span class="code" style="color: blue;">dev_obiwan</span>)
+                                </li>
+                                <li>
+                                    The bottom half is from the branch you are pulling changes from
+                                    (e.g. <span class="code" style="color: blue;">dev_chewbacca</span>)
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            The long hexadecimal number indicates the commit from which you are pulling changes
+                        </li>
+                        <li>
+                            Multiple merge conflict points can exist within a single file
+                        </li>
+                    </ul>
+                </div>
+                <div class="div-right-half">
+                    <img src="img/merge-conflicts/cli/analyzing-conflict.png" alt="Analyzing the conflict" width="100%">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <div class="div-whole-of-parts">
+                <div class="div-left-half">
+                    <p class="common-text-justified">
+                        To resolve this conflict, you must decide what the end result should be.
+                        This may require discussing it with the other developer or even the team lead.
+                        For the sake of this example, let’s say we want to include both sentences added
+                        by Obi-Wan and Chewbacca.
+                    </p>
+                </div>
+                <div class="div-right-half">
+                    <img src="img/merge-conflicts/cli/analyzing-conflict.png" alt="Analyzing the conflict" width="100%">
+                </div>
+            </div>
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                <b>Resolving the Conflict</b> - <em>Option 1: Manually</em>
+                <br>
+                Just open the file and edit it yourself
+            </p>
             <p class="common-text-justified">
-
+                Often times this is the easiest option for small conflicts,
+                but may not be for larger, more complex conflicts.
+                When you edit the file, you will need to remove all lines that Git added that begin with:
+            </p>
+            <p class="common-text-center" style="color: blue;">
+                <span style="color: red;"><<<<<<<</span>
+                &emsp;&emsp;or&emsp;&emsp;
+                <span style="color: red;">=======</span>
+                &emsp;&emsp;or&emsp;&emsp;
+                <span style="color: red;">>>>>>>></span>
+            </p>
+            <p class="common-text-center">
+                These are the lines that Git added for marking the merge conflict.
             </p>
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                <b>Resolving the Conflict</b> - <em>Option 2: You or Them</em>
+                <br>
+                You may want to select either all of your changes or all of their changes
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <p class="code" style="color: blue;">
+                git merge --strategy-option ours
+            </p>
+            <p class="code" style="color: blue;">
+                git merge --strategy-option theirs
+            </p>
+            <p class="common-text-center" style="color: red;">
+                Beware that selecting all of yours or theirs will completely ignore
+                changes from the other party!
+            </p>
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                <b>Resolving the Conflict</b> - <em>Option 3: External Editor</em>
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <p class="common-text-left">
+                Set up your Git config to open an external editor for merging.
+                The initial set up of this can be slightly complicated, but overall it is worth it.
+                <a href="https://saraford.net/2017/04/14/how-to-configure-an-external-diff-and-merge-tool-in-git-104/"
+                   target="_blank">
+                    Click here for a guide on configuring merge tools</a>.
+            </p>
+            <p class="code" style="color: blue;">
+                git mergetool
+            </p>
+            <img src="img/merge-conflicts/cli/mergetool-example.png" alt="Mergetool Example" width="100%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
             <p class="common-text-justified">
-
+                Resolving conflicts is very context specific.
+                In this particular scenario, we may want to keep both additions from users.
+                Let's assume that, whichever path you've decided to go down, you've sorted out the conflict in the file.
+                Git still needs to be told that all merge conflicts have been resolved.
+                First, we must stage the resolved files using
+                <span class="code" style="color: blue">git add</span>.
+                You'll see that Git created a copy of the <em>original</em> file with the extension <b>.orig</b>
+                in the process of throwing a merge conflict.
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/cli/resolved-but-not-pushed.png"
+                 alt="Merge conflict resolved but not committed" width="60%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
             <p class="common-text-justified">
-
+                Now that you've staged the file, simply enter: &emsp;
+                <span class="code" style="color: blue;">git commit</span>
+                <br>
+                but <em><b>without</b></em> the including a commit message.
+                Git should open a page like the one below, containing details of the merge.
+                You can edit this message if you'd like, though it's not common or necessary.
+                You'll see this same briefing for an unconflicted merge as well.
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/cli/merge-brief.png" alt="Merge brief" width="60%">
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                And voila – you have successfully resolved a merge conflict from the command line!
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/cli/git-commit-log.png" alt="git commit log" width="100%">
         </section>
     </div>
 </div>
@@ -256,9 +391,6 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
-
-
-
 
 </script>
 </body>

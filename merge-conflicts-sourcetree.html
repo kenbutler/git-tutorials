@@ -79,6 +79,7 @@
             </p>
         </section>
         <section data-transition="slide-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <img src="img/character/Darth-Vader.png" alt="Team Lead" width="40%">
             <h4>Team Lead</h4>
             <p class="common-text-justified">
@@ -87,6 +88,7 @@
             </p>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
             <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
             <p class="common-text-justified">
@@ -118,33 +120,51 @@
             <img src="img/merge-conflicts/death-star-file-orig.png" alt="Original file" width="30%">
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Boba-Fett.png" alt="Boba Fett" width="40%">
-            <img src="img/merge-conflicts/death-star-file-boba-fett.png" alt="Boba Fett's changes" width="40%">
-            <p class="common-text-justified">
-                Boba Fett goes off and adds a maneuvering method to the Death Star code.
-                <b>Notice that he has changed the known radius of the Death Star from <u>160 km to 140 km</u>.</b>
-                We can’t be sure if this was by <em>accident</em>
-                or through some knowledge that was gained in the development process.
-            </p>
+            <div class="div-left-half">
+                <img src="img/character/Boba-Fett.png" alt="Boba Fett" width="40%">
+                <br>
+                Boba Fett
+                <br>
+                <p class="common-text-justified">
+                    Boba Fett adds a maneuvering method to the Death Star code.
+                    <b>Notice that he has changed the known radius of the Death Star from <u>160 km to 140 km</u>.</b>
+                    We can’t be sure if this was by <em>accident</em>
+                    or through some knowledge that was gained in the development process.
+                </p>
+            </div>
+            <div class="div-right-half">
+                <img src="img/merge-conflicts/death-star-file-boba-fett.png" alt="Boba Fett's changes" width="100%">
+            </div>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/merge-conflicts/death-star-file-jawa.png" alt="Jawa's changes" width="40%">
-            <img src="img/character/Jawa.png" alt="Boba Fett" width="40%">
-            <p class="common-text-justified">
-                The Jawa also progresses in its work on weapon metrics.
-                Oddly, though, the Jawa has <em>also</em> changed the radius of the Death Star --
-                <b>from <u>160 km to 150 km</u></b>.
-                <b>Both developers changed the same line.</b>
-                <span style="color: red;">
+            <h4>How Merge C</h4>
+            <div class="div-left-half">
+                <img src="img/merge-conflicts/death-star-file-jawa.png" alt="Jawa's changes" width="100%">
+            </div>
+            <div class="div-right-half">
+                <img src="img/character/Jawa.png" alt="Jawa" width="40%">
+                <br>
+                Jawa
+                <br>
+                <p class="common-text-justified">
+                    The Jawa also progresses in its work on weapon metrics.
+                    Oddly, though, the Jawa has <em>also</em> changed the radius of the Death Star --
+                    <b>from <u>160 km to 150 km</u></b>.
+                    <b>Both developers changed the same line.</b>
+                    <span style="color: red;">
                     This sort of conflict will cause a merge conflict in Git.
                 </span>
-                This is common when developers work within the same file.
-            </p>
+                    This is common when developers work within the same file.
+                </p>
+            </div>
         </section>
         <section data-transition="slide-in fade-out" data-background="white">
             <h4>How to Resolve Merge Conflicts</h4>
-            <p class="common-text-center">
-                Now that we've seen an example of how a merge conflict may arise, let's resolve one!
+            <p class="common-text-justified">
+                Unlike the previous scenario, merge conflicts are not always as easily foreseen.
+                Often, developers simply pull in updates and may initially have no idea why they occurred!
+                Given this, it's worth approaching <em>how to solve</em> merge conflicts in a way that a developer
+                would normally experience them.  So let's introduce a new scenario for this and begin fresh.
                 <br><br>
                 In a galaxy far, far away, another software team faces another merge conflict...
                 (<em>click right arrow</em>)
