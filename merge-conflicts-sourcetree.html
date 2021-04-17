@@ -49,7 +49,7 @@
     <div class="slides">
         <section>
             <h3>Merge Conflicts</h3>
-            <h4>SourceTree</h4>
+            <h4>Command Line Interface</h4>
             <p class="common-text-justified">
                 When using Git in a team, it's inevitable that a merge conflict will arise <em>eventually</em>.
                 Merge conflicts occur when trying to pull in updates to your local branch
@@ -80,7 +80,7 @@
         </section>
         <section data-transition="slide-in fade-out" data-background="white">
             <h4>How Merge Conflicts Arise</h4>
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="40%">
+            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
             <h4>Team Lead</h4>
             <p class="common-text-justified">
                 In this scenario, Darth Vader is tasking his team with various upgrades to his Death Star.
@@ -100,6 +100,7 @@
             </p>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <p class="common-text-justified">
                 He has given out two tasks.
                 One to write code for the maneuvering of the Death Star throughout the galaxy,
@@ -110,6 +111,7 @@
             <img src="img/merge-conflicts/tasking.png" alt="Empire Tasking" width="60%">
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <p class="common-text-justified">
                 While it would be ideal that either (A) team members communicate with each other about this beforehand,
                 or (B) are instructed to do so by the team lead,
@@ -120,6 +122,7 @@
             <img src="img/merge-conflicts/death-star-file-orig.png" alt="Original file" width="30%">
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How Merge Conflicts Arise</h4>
             <div class="div-left-half">
                 <img src="img/character/Boba-Fett.png" alt="Boba Fett" width="40%">
                 <br>
@@ -137,7 +140,7 @@
             </div>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <h4>How Merge C</h4>
+            <h4>How Merge Conflicts Arise</h4>
             <div class="div-left-half">
                 <img src="img/merge-conflicts/death-star-file-jawa.png" alt="Jawa's changes" width="100%">
             </div>
@@ -158,106 +161,201 @@
                 </p>
             </div>
         </section>
-        <section data-transition="slide-in fade-out" data-background="white">
+        <section data-transition="fade-in fade-out" data-background="white">
             <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Initial State</b></p>
             <p class="common-text-justified">
-                Unlike the previous scenario, merge conflicts are not always as easily foreseen.
-                Often, developers simply pull in updates and may initially have no idea why they occurred!
-                Given this, it's worth approaching <em>how to solve</em> merge conflicts in a way that a developer
-                would normally experience them.  So let's introduce a new scenario for this and begin fresh.
-                <br><br>
-                In a galaxy far, far away, another software team faces another merge conflict...
-                (<em>click right arrow</em>)
+                Let's consider the repository that Obi-Wan and Chewbacca have been building for the Republic.
             </p>
-        </section>
-
-        <!-- TODO -->
-        <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
-            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
-            <p class="common-text-justified">
-
-            </p>
+            <img src="img/merge-conflicts/sourcetree/initial-state.png" alt="Initial state of repository" width="100%">
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
-            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Initial State</b></p>
             <p class="common-text-justified">
-
+                As we can see, both Obi-Wan and Chewbacca have made updates to the README.
+                This could cause conflicts, though it’s not always guaranteed.
+                If Obi-Wan and Chewbacca worked on uniquely different pieces of the code for the same file,
+                then it is no problem.
+                If they worked on the same pieces of code – or even intertwined pieces of code -
+                then this will certainly result in a merge conflict.
+            </p>
+            <img src="img/merge-conflicts/sourcetree/precursor.png" alt="Merge conflict precursor" width="100%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Pulling in Changes from Another Branch</b></p>
+            <p class="common-text-center">
+                Let’s pull Chewbacca’s latest changes into Obi-Wan’s development branch.
+            </p>
+            <img src="img/merge-conflicts/sourcetree/pull-changes.png" alt="Obi-Wan wants to pull changes" width="100%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>The Conflict Warning</b></p>
+            <p class="common-text-center">
+                Uh oh – there <em><u>was</u></em> a merge conflict.
+                This is the pop-up you will see when that happens.
+            </p>
+            <img src="img/merge-conflicts/sourcetree/conflict-warning.png" alt="Conflict warning" width="50%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>In a Conflicted State</b></p>
+            <p class="common-text-center">
+                You will see the merge conflict in the bottom right, while in a conflicted state.
+            </p>
+            <img src="img/merge-conflicts/sourcetree/initial-merge-conflict-state.png"
+                 alt="Conflicted state" width="100%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Analyzing the Conflict</b></p>
+            <p class="common-text-justified">
+                SourceTree helps by showing the contents of the file,
+                which we can use to understand what problems arose.
+                We see that the file has additions, which include some weird things like angular brackets,
+                <span class="code" style="color: blue;">HEAD</span>, and a long hexadecimal number.
+            </p>
+            <img src="img/merge-conflicts/sourcetree/initial-merge-conflict-state.png"
+                 alt="Analyzing the conflict" width="100%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Analyzing the Conflict</b></p>
+            <ul class="common-text-left">
+                <li>
+                    The angular brackets indicate the beginning and end of a conflicted segment.
+                </li>
+                <li>
+                    The equal signs separate the code from the two branches
+                    <ul>
+                        <li>
+                            The top half is from the branch you are merging into
+                            (e.g. <span class="code" style="color: blue;">dev_obiwan</span>)
+                        </li>
+                        <li>
+                            The bottom half is from the branch you are pulling changes from
+                            (e.g. <span class="code" style="color: blue;">dev_chewbacca</span>)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    The long hexadecimal number indicates the commit from which you are pulling changes
+                </li>
+                <li>
+                    Multiple merge conflict points can exist within a single file
+                </li>
+            </ul>
+            <img src="img/merge-conflicts/sourcetree/initial-merge-conflict-state.png"
+                 alt="Analyzing the conflict" width="80%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Analyzing the Conflict</b></p>
+            <p class="common-text-justified">
+                To resolve this conflict, you must decide what the end result should be.
+                This may require discussing it with the other developer or even the team lead.
+                For the sake of this example, let’s say we want to include both sentences added
+                by Obi-Wan and Chewbacca.
+            </p>
+            <img src="img/merge-conflicts/sourcetree/initial-merge-conflict-state.png"
+                 alt="Analyzing the conflict" width="100%">
+        </section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                <b>Resolving the Conflict</b> - <em>Option 1: Manually</em>
+                <br>
+                Just open the file and edit it yourself
+            </p>
+            <p class="common-text-justified">
+                Often times this is the easiest option for small conflicts,
+                but may not be for larger, more complex conflicts.
+                When you edit the file, you will need to remove all lines that Git added that begin with:
+            </p>
+            <p class="common-text-center" style="color: blue;">
+                <span style="color: red;"><<<<<<<</span>
+                &emsp;&emsp;or&emsp;&emsp;
+                <span style="color: red;">=======</span>
+                &emsp;&emsp;or&emsp;&emsp;
+                <span style="color: red;">>>>>>>></span>
+            </p>
+            <p class="common-text-center">
+                These are the lines that Git added for marking the merge conflict.
             </p>
         </section>
         <section data-transition="fade-in fade-out" data-background="white">
-            <img src="img/character/Darth-Vader.png" alt="Team Lead" width="30%">
-            <img src="img/merge-conflicts/death-star-file-zoom.png" alt="Death Star Logic" width="60%">
-            <p class="common-text-justified">
-
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                <b>Resolving the Conflict</b> - <em>Option 2: You or Them</em>
+                <br>
+                Select either all of yours or all of theirs.
+                <br>
+                From the menu, select <em>Action > Resolve Conflicts</em>
+            </p>
+            <div>
+                <div class="div-left-half">
+                    <img src="img/merge-conflicts/sourcetree/resolve-conflicts-option.png" alt="Resolve conflicts" width="80%">
+                </div>
+                <div class="div-left-half">
+                    <img src="img/merge-conflicts/sourcetree/option-2.png" alt="Resolve Using 'Mine'" width="80%">
+                </div>
+            </div>
+            <p class="common-text-center" style="color: red;">
+                Beware that selecting all of yours or theirs will completely ignore
+                changes from the other party!
             </p>
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center">
+                <b>Resolving the Conflict</b> - <em>Option 3: External Editor</em>
+                <br>
+                Set up SourceTree to open an external editor for merging.
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <p class="common-text-justified">
+                Do this by first going into SourceTree’s preferences and setting the merge tool
+                to whatever you would like it to be.
+                Once complete, select <em>Action > Resolve Conflicts > Launch External Merge Tool</em>
+            </p>
+            <img src="img/merge-conflicts/sourcetree/resolve-conflicts-option.png" alt="Resolve conflicts" width="30%">
+            <img src="img/merge-conflicts/sourcetree/option-3.png" alt="Launch external editor" width="40%">
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Stage the Fix</b></p>
+            <p class="common-text-center">
+                Here we have elected to edit the file ourselves.
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/sourcetree/fix-made.png" alt="Fix made but need to stage" width="80%">
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Complete the Merge</b></p>
+            <p class="common-text-center">
+                The file has been staged, so now let’s complete the merge by committing.
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/sourcetree/fix-staged.png" alt="Fix staged" width="80%">
         </section>
-        <section>
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Merge Brief</b></p>
             <p class="common-text-justified">
-
+                When commiting a merge (whether it was ever conflicted or not),
+                Git automatically creates a merge briefing.
+                You can edit this message if you'd like, though it's not common or necessary.
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/sourcetree/merge-brief.png" alt="Merge brief" width="100%">
         </section>
-        <section>
-            <p class="common-text-justified">
-
+        <section data-transition="fade-in fade-out" data-background="white">
+            <h4>How to Resolve Merge Conflicts</h4>
+            <p class="common-text-center"><b>Merge Conflict Resolved and Committed</b></p>
+            <p class="common-text-center">
+                You have successfully resolved a merge conflict on SourceTree!
             </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
-        </section>
-        <section>
-            <p class="common-text-justified">
-
-            </p>
-            <img src="aaa.png" alt="EXAMPLE" width="100%">
+            <img src="img/merge-conflicts/sourcetree/resolution.png"
+                 alt="Merge conflict resolved and committed" width="100%">
         </section>
     </div>
 </div>
