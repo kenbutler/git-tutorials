@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Git Tutorials | Security Protocol</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+    <!-- Icon -->
+    <link rel="icon" href="img/icon/git.ico">
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript">ddlevelsmenu.setup("ddtopmenubar", "topbar")</script>
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="nav" class="ddsmoothmenu">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="team_workflow.html">Workflow</a></li>
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="security_protocol.html" style="color:white;background-color:#1A1A1A">Security Protocol</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="basic_commands.html">Basics</a></li>
+            <li><a href="merge_conflicts.html">Merge Conflicts</a></li>
+            <li><a href="binary_files.html">Binary Files</a></li>
+            <li><a href="advanced.html">Advanced</a></li>
+            <li><a href="help.html">Help!</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <br style="clear: left"/>
+    </div>
+</div>
+<!-- Content -->
+<div id="content" class="reveal">
+    <div class="slides">
+        <section>
+            <h4>Security Protocol</h4>
+            <p class="common-text-left">
+                Security protocol, in general, supports the secure transfer of data to and from networked computers.
+                In order to use Git with a team, it is important to understand these protocol to be able to perform
+                server-related actions, such as cloning.
+                While
+                <a href="https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols" target="_blank">
+                    a number of security protocols exist
+                </a>,
+                there are two main protocol you'll most often encounter:
+            </p>
+            <p class="common-text-center">
+                <b>HTTPS</b> &emsp; and &emsp; <b>SSH</b>
+            </p>
+            <p class="common-text-left">
+                The method you use when cloning down a repository will remain with that clone instance,
+                unless you
+                simply reclone using an alternative method or
+                <a href="https://devconnected.com/how-to-change-git-remote-origin/" target="_blank">
+                    reconfigure the repository's URL on your local machine</a>.
+            </p>
+            <p class="common-text-center">
+                <span style="color:yellow;">
+                    Click the right arrow for a brief overview of each...
+                </span>
+            </p>
+        </section>
+        <section>
+            <h4>HTTPS</h4>
+            <p class="common-text-justified">
+                HTTPS (Hypertext Transfer Protocol Secure) is a more secure extension of HTTP that has become
+                very popular.
+                Modern browsers, for example, often mark websites as secure or not based on whether the site uses
+                HTTP or HTTPS.
+                It uses public-private key cryptography to authenticate users.
+                When using HTTPS, Git will by default always ask for a your password for server-related actions
+                (e.g. push, pull, and clone). It is possible, though not recommended, to
+                <a href="https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/"
+                   target="_blank">
+                    have Git store your credentials for you
+                </a>
+                HTTPS is easier to set up than SSH,
+                though it is generally a bad habit to enter your password frequently.
+            </p>
+        </section>
+        <section>
+            <h4>SSH</h4>
+            <p class="common-text-justified">
+                SSH also uses public-private key cryptography to authenticate users.
+                Unlike HTTPS though, it does not use username/password for confirming user identity.
+                In order to create SSH keys, you'll need to either enter
+                <span class="code">ssh-keygen -t rsa</span>
+                <a href="https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x"
+                   target="_blank">
+                    from the command line
+                </a> or use a tool such as
+                <a href="https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows"
+                   target="_blank">
+                    PuTTy
+                </a>
+                for Windows.
+                This process will create public and private keys.
+                When using SSH with Git, you'll need to ensure you upload your
+                <u><b>public (<span style="color:red;">NOT private</span>)</b></u>
+                key to your server.
+                <u>Your private key should never be shared.</u>
+                These keys can be used for multiple different servers.
+                If you change computers, you'll need to recreate keys.
+                This process is cheap and easy though.
+                It's often easier to just recreate keys than resolve a protocol error
+                when performing server-related actions (pushes, pulls, clones, etc).
+            </p>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+</script>
+</body>
+</html>
